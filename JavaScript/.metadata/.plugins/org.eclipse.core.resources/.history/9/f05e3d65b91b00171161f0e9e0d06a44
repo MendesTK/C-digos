@@ -228,10 +228,6 @@ public class trabson {
 								}
 							}
 						}
-						if (tentativas > 0){
-							System.out.println("Dificuldade concluida. Sua pontuação total é: " + pontuacao);
-							System.out.println("Parabéns, você completou o game!");
-						}
 					}
 				}
 			}
