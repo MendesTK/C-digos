@@ -186,8 +186,8 @@ public class trabson {
 								}
 							}
 							else if (random > 20 && random <= 30){ //multiplicação
-								random1 = (int) Math.floor(Math.random() * 100); 
-								random2 = (int) Math.floor(Math.random() * 100);
+								random1 = (int) Math.floor(Math.random() * 10); 
+								random2 = (int) Math.floor(Math.random() * 10);
 								multiplicacao = random1 * random2;
 								System.out.println(random1 + " * " + random2 + " = ?");
 								System.out.print("Sua resposta: ");
@@ -207,8 +207,8 @@ public class trabson {
 								}
 							}
 							else if (random > 30 && random <= 40){ //divisão
-								random1 = (int) Math.floor(Math.random() * 100); 
-								random2 = (int) Math.floor(Math.random() * 100);
+								random1 = (int) Math.floor(Math.random() * 10); 
+								random2 = (int) Math.floor(Math.random() * 10);
 								divisao = random1 / random2;
 								System.out.println(random1 + " / " + random2 + " = ?");
 								System.out.print("Sua resposta: ");
