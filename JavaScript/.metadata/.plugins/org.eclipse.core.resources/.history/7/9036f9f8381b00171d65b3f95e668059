@@ -1,0 +1,63 @@
+package jogoMAT;
+
+import java.util.Scanner;
+
+
+
+public class trabson {
+	
+	public static void main(String Args[]){
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("   Jogo de Matemática");
+		System.out.println("************************");
+		System.out.println("* 1 - Novo Jogo        *");
+		System.out.println("* 2 - Dificuldade      *");
+		System.out.println("* 3 - Sair             *");
+		System.out.println("************************");
+		int pontuacao = 0, aux; // Armazenar a pontuação
+		int dificuldade = 1;
+		int tentativas = 3;
+		System.out.print(": ");
+		aux = entrada.nextInt();
+		if (aux == 2){ // If para a escolha de dificuldade
+			System.out.print("Informe a dificuldade entre 1 a 4: ");
+			dificuldade = entrada.nextInt();
+			System.out.print("Informe 1 para jogar: ");
+			aux = entrada.nextInt();
+		}
+		if (aux == 1){ //Novo jogo (Se não for escolhido a dificuldade antes, ela começara em 1
+			while (tentativas > 0){
+				if (dificuldade == 1){ //Soma e Subtração
+				
+				}
+				else if (dificuldade == 2){
+					int multiplicacao, random1, random2, resposta;
+					for (int i = 0; i < 9; i++){
+						random1 = (int) Math.floor(Math.random() * 10); 
+						random2 = (int) Math.floor(Math.random() * 10);
+						multiplicacao = random1 * random2;
+						System.out.println(random1 + " * " + random2 + " = ?");
+						System.out.print("Sua resposta: ");
+						resposta = entrada.nextInt();
+						if (multiplicacao == resposta){
+							pontuacao += 1;
+							System.out.println("Parabéns vc acertou!");
+						}
+						else{
+							tentativas -= 1;
+							System.out.println("Resposta incorreta!");
+							System.out.println("Restam " + tentativas + "tentativas!");
+						
+						}
+					}	
+				}
+			}
+		}
+		else if (aux == 3){
+			System.out.print("Obrigado por jogar!");
+		}
+		
+		entrada.close();
+	}
+
+}
