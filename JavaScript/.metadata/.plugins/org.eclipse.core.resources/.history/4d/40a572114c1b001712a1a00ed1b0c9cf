@@ -139,7 +139,7 @@ public class trabson {
 				}
 				else if (dificuldade == 4){ // ultima dificuldade, misto de todos os outros
 					int soma, subtracao, multiplicacao, divisao, random;
-					///////
+					/////
 					
 				}
 			}
