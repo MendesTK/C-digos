@@ -114,13 +114,10 @@ public class trabson {
 					else if (dificuldade == 3){ //divisão
 						double divisao;
 						for (int i = 0; i < 9; i++){
-							double rap1,rap2,resp,dado;
-							
-							
+							double rap1, rap2, resp, dado;
 							rap1 = (double) Math.floor(Math.random() * 10); 
 							rap2 = (double) Math.floor(Math.random() * 9+1);
 							divisao = (double) (rap1 / rap2);
-							
 							System.out.println(rap1 + " / " + rap2 + " = ?");
 							System.out.print("Sua resposta: ");
 							resp = entrada.nextDouble();
@@ -145,7 +142,7 @@ public class trabson {
 						}
 					}
 					else if (dificuldade == 4){ // ultima dificuldade, misto de todos os outros
-						int soma, subtracao, multiplicacao, divisao, random;
+						int soma, subtracao, multiplicacao, random;
 						for (int i = 0; i < 9; i++){
 							random = (int) Math.floor(Math.random() * 41);
 							if (random <= 10){ //soma
@@ -212,31 +209,26 @@ public class trabson {
 								}
 							}
 							else if (random > 30 && random <= 40){ //divisão
-								
-								
-									double rap1,rap2,resp,dado,div;
+								double rap1, rap2, resp, dado, div;
+								rap1 = (double) Math.floor(Math.random() * 100); 
+								rap2 = (double) Math.floor(Math.random() * 99+1);
+								div = (double) (rap1 / rap2);
+								System.out.println(rap1 + " / " + rap2 + " = ?");
+								System.out.print("Sua resposta: ");
+								resp = entrada.nextDouble();
+								dado = Math.round(div*10)/10D;
+								if (dado == resp){
+									pontuacao += 1;
+									System.out.println("Parabéns vc acertou!");
+								}
+								else{
+									tentativas -= 1;
+									System.out.println("Resposta incorreta!");
+									System.out.println("Restam " + tentativas + " vidas!");
+									if (tentativas == 0){
+										System.out.println("Sua pontuação total é: " + pontuacao);
+										break;
 									
-									
-									rap1 = (double) Math.floor(Math.random() * 100); 
-									rap2 = (double) Math.floor(Math.random() * 99+1);
-									div = (double) (rap1 / rap2);
-									
-									System.out.println(rap1 + " / " + rap2 + " = ?");
-									System.out.print("Sua resposta: ");
-									resp = entrada.nextDouble();
-									dado = Math.round(div*10)/10D;
-									if (dado == resp){
-										pontuacao += 1;
-										System.out.println("Parabéns vc acertou!");
-									}
-									else{
-										tentativas -= 1;
-										System.out.println("Resposta incorreta!");
-										System.out.println("Restam " + tentativas + " vidas!");
-										if (tentativas == 0){
-											System.out.println("Sua pontuação total é: " + pontuacao);
-											break;
-										
 									}
 								}
 							}
