@@ -32,6 +32,9 @@ public class PedraPapelTesoura {
 		else if ((jogadorB == 'P' || jogadorB == 'p') && (jogadorA == 'R' || jogadorA == 'r')){
 			System.out.println("O jogador B venceu!");
 		}
+		else{
+			System.out.println("Empate");
+		}
 		entrada.close();
 		
 	}
