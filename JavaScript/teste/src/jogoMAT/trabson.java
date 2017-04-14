@@ -8,7 +8,7 @@ public class trabson {
 	
 	public static void main(String[] Args){
 		Scanner entrada = new Scanner(System.in);
-		int aux = 0;
+		int aux = 0, dificuldade = 1;
 		while (aux != 3){
 			System.out.println("   Jogo de Matemática");
 			System.out.println("************************");
@@ -17,15 +17,21 @@ public class trabson {
 			System.out.println("* 3 - Sair             *");
 			System.out.println("************************");
 			int pontuacao = 0; // Armazenar a pontuação
-			int dificuldade = 1;
-			int tentativas = 3;
+			int tentativas = 5;
 			System.out.print(": ");
 			aux = entrada.nextInt();
 			if (aux == 2){ // If para a escolha de dificuldade
-				System.out.print("Informe a dificuldade entre 1 a 4: ");
+				System.out.println("*********************************");
+				System.out.println("* Dificuldade *   Expressões    *");
+				System.out.println("*=============*=================*");
+				System.out.println("*      1      *     + | -       *");
+				System.out.println("*      2      *     . (*)       *");
+				System.out.println("*      3      *       /         *");
+				System.out.println("*      4      *  + | - | . | /  *");
+				System.out.println("*********************************");
+				System.out.print(": ");
 				dificuldade = entrada.nextInt();
-				System.out.print("Informe 1 para jogar: ");
-				aux = entrada.nextInt();
+				System.out.println("Dificuldade escolhida. Bom jogo!");
 			}
 			if (aux == 1){ //Novo jogo (Se não for escolhido a dificuldade antes, ela começara em 1
 				int random1, random2, resposta;
@@ -47,10 +53,11 @@ public class trabson {
 								}
 								else{
 									tentativas -= 1;
-									System.out.println("Resposta incorreta!");
+									System.out.println("Resposta incorreta! A resposta correta era: "+ soma);
 									System.out.println("Restam " + tentativas + " vidas!");
 									if (tentativas == 0){
 										System.out.println("Sua pontuação total é: " + pontuacao);
+										dificuldade = 1;
 										break;
 									}
 								}
@@ -68,10 +75,11 @@ public class trabson {
 								}
 								else{
 									tentativas -= 1;
-									System.out.println("Resposta incorreta!");
+									System.out.println("Resposta incorreta! A resposta correta era: "+ subtracao);
 									System.out.println("Restam " + tentativas + " vidas!");
 									if (tentativas == 0){
 										System.out.println("Sua pontuação total é: " + pontuacao);
+										dificuldade = 1;
 										break;
 									}
 								}
@@ -98,10 +106,11 @@ public class trabson {
 							}
 							else{
 								tentativas -= 1;
-								System.out.println("Resposta incorreta!");
+								System.out.println("Resposta incorreta! A resposta correta era: "+ multiplicacao);
 								System.out.println("Restam " + tentativas + " vidas!");
 								if (tentativas == 0){
 									System.out.println("Sua pontuação total é: " + pontuacao);
+									dificuldade = 1;
 									break;
 								}
 							}
@@ -128,10 +137,11 @@ public class trabson {
 							}
 							else{
 								tentativas -= 1;
-								System.out.println("Resposta incorreta!");
+								System.out.println("Resposta incorreta! A resposta correta era: "+ dado);
 								System.out.println("Restam " + tentativas + " vidas!");
 								if (tentativas == 0){
 									System.out.println("Sua pontuação total é: " + pontuacao);
+									dificuldade = 1;
 									break;
 								}
 							}
@@ -158,10 +168,11 @@ public class trabson {
 								}
 								else{
 									tentativas -= 1;
-									System.out.println("Resposta incorreta!");
+									System.out.println("Resposta incorreta! A resposta correta era: "+ soma);
 									System.out.println("Restam " + tentativas + " vidas!");
 									if (tentativas == 0){
 										System.out.println("Sua pontuação total é: " + pontuacao);
+										dificuldade = 1;
 										break;
 									}
 								}
@@ -179,10 +190,11 @@ public class trabson {
 								}
 								else{
 									tentativas -= 1;
-									System.out.println("Resposta incorreta!");
+									System.out.println("Resposta incorreta! A resposta correta é: "+ subtracao);
 									System.out.println("Restam " + tentativas + " vidas!");
 									if (tentativas == 0){
 										System.out.println("Sua pontuação total é: " + pontuacao);
+										dificuldade = 1;
 										break;
 									}
 								}
@@ -200,10 +212,11 @@ public class trabson {
 								}
 								else{
 									tentativas -= 1;
-									System.out.println("Resposta incorreta!");
+									System.out.println("Resposta incorreta! A resposta correta era: "+ multiplicacao);
 									System.out.println("Restam " + tentativas + " vidas!");
 									if (tentativas == 0){
 										System.out.println("Sua pontuação total é: " + pontuacao);
+										dificuldade = 1;
 										break;
 									}
 								}
@@ -223,10 +236,11 @@ public class trabson {
 								}
 								else{
 									tentativas -= 1;
-									System.out.println("Resposta incorreta!");
+									System.out.println("Resposta incorreta! A resposta correta era: "+ dado);
 									System.out.println("Restam " + tentativas + " vidas!");
 									if (tentativas == 0){
 										System.out.println("Sua pontuação total é: " + pontuacao);
+										dificuldade = 1;
 										break;
 									
 									}
@@ -241,7 +255,7 @@ public class trabson {
 				}
 			}
 			else if (aux == 3){
-				System.out.print("Obrigado por jogar!");
+				System.out.print("Saiu com sucesso!");
 			}
 		}
 		entrada.close();
