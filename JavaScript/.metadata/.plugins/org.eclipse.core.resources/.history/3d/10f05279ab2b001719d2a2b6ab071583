@@ -33,7 +33,6 @@ public class trabson {
 				dificuldade = entrada.nextInt();
 				System.out.println("Dificuldade escolhida. Bom jogo!");
 			}
-			System.out.println("Você tem "+ tentativas + " vidas! Boa sorte!");
 			if (aux == 1){ //Novo jogo (Se não for escolhido a dificuldade antes, ela começara em 1
 				int random1, random2, resposta;
 				while (tentativas > 0){
