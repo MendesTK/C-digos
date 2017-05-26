@@ -49,12 +49,38 @@ public class TrabOpMAT {
 				System.out.print("Resposta: "+ resp);
 			}
 			else if (aux == 4){
-				System.out.println("A seguir, informe os números que deseja multiplicar!");
+				System.out.println("A seguir, informe os números que deseja Dividir!");
 				System.out.print(": ");
 				n1 = entrada.nextFloat();
 				System.out.print(": ");
 				n2 = entrada.nextFloat();
-				for 
+				float aux1 = n1;
+				while (aux1 > 0){
+					if (aux1 >= n2){
+						resp += 1;
+						aux1 -= n2;
+					}
+					else if (aux1 < n2 && aux1 > 0){
+						float aux3 = 1, aux4 = n2, aux5 = 0;
+						if (aux3 == 1){
+							aux3 -= 1;
+							while (aux4 > 0){
+								aux4 -= 0.1;
+								aux5 += 0.01;
+							}
+						}
+						resp += 0.1;
+						aux1 -= aux5;
+						
+					}
+				}
+				System.out.print("Resposta: "+ resp);
+				
+				
+				//for (float i = 0; i < n2;){
+					//i += 1;
+					
+				//}
 			}
 	
 		}
