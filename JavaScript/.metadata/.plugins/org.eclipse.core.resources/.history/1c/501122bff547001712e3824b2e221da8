@@ -1,0 +1,16 @@
+package OperacoesMAT;
+
+public class orientado {
+	public float somar(float n1, float n2){
+		return n1 + n2;
+	}
+	
+	public float subtrair(float n1, float n2){
+		return n1 + n2;
+	}
+	
+	public float multiplicacao(float n1, float n2){
+		soma = this.somar
+		return n1 + n2;
+	}
+}
