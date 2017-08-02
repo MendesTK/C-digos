@@ -1,0 +1,13 @@
+package Relacionamentos;
+
+import java.util.Date;
+
+public class Flight {
+	
+	private int number;
+	private String status;
+	private Date date;
+	private Airplane airplane;
+	
+	
+}

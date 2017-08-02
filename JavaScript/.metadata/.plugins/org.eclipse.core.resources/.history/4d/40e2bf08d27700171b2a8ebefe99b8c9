@@ -1,0 +1,7 @@
+package Relacionamentos;
+
+public class Airplane {
+
+	private int code;
+	private String model;
+}

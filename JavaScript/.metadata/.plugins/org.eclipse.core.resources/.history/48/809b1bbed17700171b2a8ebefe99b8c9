@@ -1,0 +1,8 @@
+package Relacionamentos;
+
+public class Airport {
+
+		private int code;
+		private String name;
+		
+}
