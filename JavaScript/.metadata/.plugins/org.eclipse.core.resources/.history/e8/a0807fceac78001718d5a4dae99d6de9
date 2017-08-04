@@ -1,0 +1,11 @@
+package Depen;
+
+public class CarroDAO {
+
+	public Carro obterPeloId(long id){
+		Carro p = new Carro();
+		p.setPlaca("Detalhes do carro.");
+		return p;
+	}
+	
+}

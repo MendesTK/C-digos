@@ -1,0 +1,16 @@
+package Depen;
+
+public class Main {
+
+	private Carro carro;
+
+	public Carro getCarro() {
+		return carro;
+	}
+
+	public void setCarro(Carro carro) {
+		this.carro = carro;
+	}
+	
+	
+}

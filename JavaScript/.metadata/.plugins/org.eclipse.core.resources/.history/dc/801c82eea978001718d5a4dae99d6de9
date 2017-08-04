@@ -1,0 +1,9 @@
+package Depen;
+
+public class CarroDAO {
+
+	public Carro obterPeloId(long id){
+		return new Carro();
+	}
+	
+}

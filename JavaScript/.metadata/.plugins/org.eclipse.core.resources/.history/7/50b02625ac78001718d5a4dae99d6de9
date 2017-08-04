@@ -1,0 +1,8 @@
+package Depen;
+
+public class CarroView {
+	public void exibir(Carro carro){
+		System.out.println("Carro: "+ carro.getPlaca());
+	}
+
+}
