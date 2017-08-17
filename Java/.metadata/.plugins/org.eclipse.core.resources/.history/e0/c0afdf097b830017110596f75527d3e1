@@ -1,0 +1,15 @@
+package HerancaGeneralizacao;
+
+public class Circulo extends Forma {
+
+	private double raio;
+
+	
+	
+	@Override
+	public double calcularVolume(){
+		return Math.PI * Math.pow(raio, 2) * altura
+	}
+	
+
+}

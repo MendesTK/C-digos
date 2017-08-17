@@ -1,0 +1,10 @@
+package HerancaGeneralizacao;
+
+public class Cilindro extends Forma {
+	
+	private String raio;
+	private String altura;
+	
+	
+
+}

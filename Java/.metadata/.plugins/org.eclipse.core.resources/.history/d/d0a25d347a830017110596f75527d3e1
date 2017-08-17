@@ -1,0 +1,24 @@
+package HerancaGeneralizacao;
+
+public class Cilindro extends Forma {
+	
+	private String raio;
+	private String altura;
+	
+	public String getRaio() {
+		return raio;
+	}
+	public void setRaio(String raio) {
+		this.raio = raio;
+	}
+	public String getAltura() {
+		return altura;
+	}
+	public void setAltura(String altura) {
+		this.altura = altura;
+	}
+	
+	@Override
+	public double calcularVolume
+
+}
