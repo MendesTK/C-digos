@@ -1,0 +1,37 @@
+package HerancaGeneralizacao;
+
+public class SolidosGeometricos {
+
+	private Double Cone;
+	private Double Cilindro;
+	private Double Piramide;
+	private Double Cubo;
+	public Double getCone() {
+		return Cone;
+	}
+	public void setCone(Double cone) {
+		Cone = cone;
+	}
+	public Double getCilindro() {
+		return Cilindro;
+	}
+	public void setCilindro(Double cilindro) {
+		Cilindro = cilindro;
+	}
+	public Double getPiramide() {
+		return Piramide;
+	}
+	public void setPiramide(Double piramide) {
+		Piramide = piramide;
+	}
+	public Double getCubo() {
+		return Cubo;
+	}
+	public void setCubo(Double cubo) {
+		Cubo = cubo;
+	}
+	
+	
+	
+	
+}

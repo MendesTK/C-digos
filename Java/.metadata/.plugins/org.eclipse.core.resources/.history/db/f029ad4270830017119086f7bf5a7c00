@@ -1,0 +1,5 @@
+package HerancaGeneralizacao;
+
+public class Cubo extends CalcularVolume {
+
+}
