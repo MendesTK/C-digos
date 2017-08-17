@@ -1,0 +1,8 @@
+package HerancaGeneralizacao;
+
+public class Piramide extends Forma {
+	
+	private double lado;
+	private double altura;
+
+}
