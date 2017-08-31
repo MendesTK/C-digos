@@ -1,11 +1,21 @@
 package interfacesIB;
 
-public class Celular implements Wifi{
+public class Celular implements Wifi, Bluetooth{
 
+	
+	public boolean conectadoNoWifi(){
+		return true;
+	}
 	public boolean possuiBluetooth(){
 		return true;
 	}
-	
+	private boolean conectadoNoBluetooth;
+	public boolean isConectadoNoBluetooth() {
+		return conectadoNoBluetooth;
+	}
+	public void setConectadoNoBluetooth(boolean conectadoNoBluetooth) {
+		this.conectadoNoBluetooth = conectadoNoBluetooth;
+	}
 	private boolean conectadoNoWifi;
 
 	public boolean isConectadoNoWifi() {
@@ -25,6 +35,18 @@ public class Celular implements Wifi{
 	@Override
 	public void desconectarDoWifi() {
 		conectadoNoWifi = false;
+		
+	}
+
+	@Override
+	public void conectarNoBluetooth(Celular celular) {
+		conectadoNoBluetooth = true;
+		
+	}
+
+	@Override
+	public void desconectarDoBluetooth() {
+		conectadoNoBluetooth = false;
 		
 	}
 	
