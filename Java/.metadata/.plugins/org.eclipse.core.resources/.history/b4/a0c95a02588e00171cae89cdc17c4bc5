@@ -1,0 +1,9 @@
+package interfacesIB;
+
+public interface Wifi {
+
+	void conectarNoWifi();
+	
+	void desconectarDoWifi();
+	
+}

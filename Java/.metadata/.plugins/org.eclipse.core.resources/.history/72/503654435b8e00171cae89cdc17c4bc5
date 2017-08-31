@@ -1,0 +1,9 @@
+package interfacesIB;
+
+public class Celular {
+
+	public boolean possuiBluetooth(){
+		return true;
+	}
+	
+}
