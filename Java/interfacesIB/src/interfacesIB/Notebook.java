@@ -28,7 +28,7 @@ public class Notebook implements Wifi, Bluetooth {
 		conectadoNoWifi = false;
 	}
 	@Override
-	public void conectarNoBluetooth(Celular celular) {
+	public void conectarNoBluetooth(RedeB redeB) {
 		conectadoNoBluetooth = true;
 		
 	}

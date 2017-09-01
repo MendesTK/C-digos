@@ -9,14 +9,18 @@ public class Celular implements Wifi, Bluetooth{
 	public boolean possuiBluetooth(){
 		return true;
 	}
+	
+
+	private boolean conectadoNoWifi;
 	private boolean conectadoNoBluetooth;
+	
 	public boolean isConectadoNoBluetooth() {
 		return conectadoNoBluetooth;
 	}
 	public void setConectadoNoBluetooth(boolean conectadoNoBluetooth) {
 		this.conectadoNoBluetooth = conectadoNoBluetooth;
 	}
-	private boolean conectadoNoWifi;
+	
 
 	public boolean isConectadoNoWifi() {
 		return conectadoNoWifi;
@@ -39,7 +43,7 @@ public class Celular implements Wifi, Bluetooth{
 	}
 
 	@Override
-	public void conectarNoBluetooth(Celular celular) {
+	public void conectarNoBluetooth(RedeB redeB) {
 		conectadoNoBluetooth = true;
 		
 	}

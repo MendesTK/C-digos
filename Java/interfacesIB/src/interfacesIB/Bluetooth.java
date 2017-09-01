@@ -2,7 +2,7 @@ package interfacesIB;
 
 public interface Bluetooth {
 
-	void conectarNoBluetooth(Celular celular);
+	void conectarNoBluetooth(RedeB redeB);
 	
 	void desconectarDoBluetooth();
 }
