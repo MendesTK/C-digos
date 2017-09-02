@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+
+public class UsarColecao {
+
+	public static void main(String[] args) {
+		//coleção de String
+		ArrayList<String> lista = new ArrayList<>();
+		//metodo size() retorna o tamanho da lista
+		System.out.println("Tamanho da lista "+lista.size());
+		//método add(umObjeto) adiciona objetos na lista
+		lista.add("Cachaça");
+		lista.add("Vodka");
+		System.out.println("Tamanho da lista "+lista.size());
+		
+
+	}
+
+}
