@@ -1,0 +1,9 @@
+package com.academico.base;
+
+public class Turma extends identificador {
+	
+	private String nomeTurma;
+	private int ano;
+	
+
+}

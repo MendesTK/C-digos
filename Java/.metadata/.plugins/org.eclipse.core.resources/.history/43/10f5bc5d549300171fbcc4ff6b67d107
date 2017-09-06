@@ -1,0 +1,13 @@
+package com.academico.base;
+
+public class Professor {
+	
+	private String nomeProfesor;
+	private int rg;
+	private int cpf;
+	private String endereco;
+	private String turno;
+	private int telefone;
+	
+
+}

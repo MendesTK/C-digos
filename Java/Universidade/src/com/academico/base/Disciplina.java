@@ -1,5 +1,13 @@
 package com.academico.base;
 
-public class Disciplina {
+import java.util.List;
+
+public class Disciplina extends identificador {
+	
+	public String nomeDisciplina;
+	public int cargaHoraria;
+	
+	public Professor professor;
+	public List<Curso> cursos;
 
 }

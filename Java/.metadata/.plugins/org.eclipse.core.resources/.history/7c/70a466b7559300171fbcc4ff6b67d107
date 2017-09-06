@@ -1,0 +1,10 @@
+package com.academico.base;
+
+public class Disciplina extends identificador {
+	
+	private String nomeDisciplina;
+	private int cargaHoraria;
+	
+	private 
+
+}

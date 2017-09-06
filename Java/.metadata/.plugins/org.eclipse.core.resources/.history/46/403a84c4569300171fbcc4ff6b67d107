@@ -1,0 +1,18 @@
+package com.academico.base;
+
+import java.util.List;
+
+public class Aluno extends identificador {
+
+	private String nomeAluno;
+	private int rg;
+	private int cpf;
+	private int dataNascimento;
+	private String mae;
+	private String pai;
+	private String endereco;
+	private int telefone;
+	
+	public List<Disciplina> disciplinas;
+
+}

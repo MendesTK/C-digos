@@ -1,0 +1,7 @@
+package com.academico.base;
+
+public class Curso extends identificador {
+	
+	private String nomeCurso;
+
+}

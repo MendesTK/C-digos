@@ -1,5 +1,11 @@
 package com.academico.base;
 
-public class Curso {
+import java.util.List;
+
+public class Curso extends identificador {
+	
+	public String nomeCurso;
+	
+	public List<Disciplina> disciplinas;
 
 }
