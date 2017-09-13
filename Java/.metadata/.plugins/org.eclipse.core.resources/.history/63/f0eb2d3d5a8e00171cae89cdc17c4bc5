@@ -1,8 +1,0 @@
-package interfacesIB;
-
-public interface Bluetooth {
-
-	void conectarNoBluetooth();
-	
-	void desconectarDoBluetooth();
-}

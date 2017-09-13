@@ -3,4 +3,8 @@
 <fullyQualifiedTypeName name="com.system.model.Statement"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.academico.base.Aluno"/>
+<fullyQualifiedTypeName name="com.academico.base.Nota"/>
+<fullyQualifiedTypeName name="com.academico.base.Disciplina"/>
+<fullyQualifiedTypeName name="com.academico.base.Curso"/>
 </qualifiedTypeNameHistroy>

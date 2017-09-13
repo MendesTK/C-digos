@@ -1,5 +1,0 @@
-package interfacesIB;
-
-public interface Bluetooth {
-
-}
