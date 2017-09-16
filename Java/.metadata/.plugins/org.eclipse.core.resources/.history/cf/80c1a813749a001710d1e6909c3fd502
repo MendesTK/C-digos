@@ -1,0 +1,11 @@
+package com.produto;
+
+import java.util.List;
+
+public interface Ordenacao {
+	
+	public List<Produto> ordenarDecrescente(Produto produto);
+	public List<Produto> ordenarCrescente(Produto produto);
+	
+	
+}

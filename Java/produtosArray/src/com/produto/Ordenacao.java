@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface Ordenacao {
 	
-	List<Produto> ordenarDecrescente(Produto produto);
-	List<Produto> ordenarCrescente(Produto produto);
+	public List<Produto> ordenarDecrescente(List<Produto> lista);
+	public List<Produto> ordenarCrescente(List<Produto> lista);
 	
 	
 }

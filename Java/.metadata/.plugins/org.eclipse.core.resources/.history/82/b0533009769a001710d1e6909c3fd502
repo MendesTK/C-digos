@@ -66,9 +66,9 @@ public class AdicionarProdutos {
 		Monitor.setNome("Monitor");
 		Monitor.setPreco(3.50);
 		
-		Produto Vinho = new Produto();
-		Vinho.setNome("Vinho");
-		Vinho.setPreco(3.50);
+		Produto maionese = new Produto();
+		maionese.setNome("Vinho");
+		maionese.setPreco(3.50);
 		
 		Produto Mesa = new Produto();
 		Mesa.setNome("Mesa");

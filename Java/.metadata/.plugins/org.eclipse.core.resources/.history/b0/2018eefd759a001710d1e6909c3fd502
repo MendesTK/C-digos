@@ -50,29 +50,29 @@ public class AdicionarProdutos {
 		Celular.setNome("Celular");
 		Celular.setPreco(579678);
 		
-		Produto Cocaina = new Produto();
-		Cocaina.setNome("Cocaina");
-		Cocaina.setPreco(5.25);
+		Produto arroz = new Produto();
+		arroz.setNome("Cocaina");
+		arroz.setPreco(5.25);
 		
-		Produto Margarina = new Produto();
-		Margarina.setNome("Margarina");
-		Margarina.setPreco(6.25);
+		Produto feijao = new Produto();
+		feijao.setNome("Margarina");
+		feijao.setPreco(6.25);
 		
-		Produto Cerva = new Produto();
-		Cerva.setNome("Cerva");
-		Cerva.setPreco(10.00);
+		Produto vinho = new Produto();
+		vinho.setNome("Cerva");
+		vinho.setPreco(10.00);
 		
-		Produto Monitor = new Produto();
-		Monitor.setNome("Monitor");
-		Monitor.setPreco(3.50);
+		Produto margarina = new Produto();
+		margarina.setNome("Monitor");
+		margarina.setPreco(3.50);
 		
-		Produto Vinho = new Produto();
-		Vinho.setNome("Vinho");
-		Vinho.setPreco(3.50);
+		Produto maionese = new Produto();
+		maionese.setNome("Vinho");
+		maionese.setPreco(3.50);
 		
-		Produto Mesa = new Produto();
-		Mesa.setNome("Mesa");
-		Mesa.setPreco(3.50);
+		Produto vinagre = new Produto();
+		vinagre.setNome("Mesa");
+		vinagre.setPreco(3.50);
 		
 		listaProdutos.add(TV);
 		listaProdutos.add(Vodka);
