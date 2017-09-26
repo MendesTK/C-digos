@@ -1,8 +1,0 @@
-package com.academico.controller;
-import com.academico.base.*;
-public class ProfessorController {
-
-	public void CadastrarProf (Professor professor){
-		
-	}
-}
