@@ -1,0 +1,12 @@
+package interfaces;
+
+public abstract class MudarEnturmacao {
+
+	private String consultarAluno;
+	
+	
+	public void reenturmarAluno(){
+		
+	}
+	
+}

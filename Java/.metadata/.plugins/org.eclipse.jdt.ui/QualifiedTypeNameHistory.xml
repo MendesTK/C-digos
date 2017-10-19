@@ -7,4 +7,7 @@
 <fullyQualifiedTypeName name="com.academico.base.Nota"/>
 <fullyQualifiedTypeName name="com.academico.base.Disciplina"/>
 <fullyQualifiedTypeName name="com.academico.base.Curso"/>
+<fullyQualifiedTypeName name="interfaces.ConsultarDiario"/>
+<fullyQualifiedTypeName name="DAO.DiarioDAO"/>
+<fullyQualifiedTypeName name="interfaces.MudarEnturmacao"/>
 </qualifiedTypeNameHistroy>
