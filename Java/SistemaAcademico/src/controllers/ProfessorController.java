@@ -13,6 +13,8 @@ public class ProfessorController {
 		if (validacao){
 			DiarioDAO diarioDAO = new DiarioDAO();
 			diarioDAO.consultar(consultarDiario);
+			
+			
 		}
 		return null;
 	}

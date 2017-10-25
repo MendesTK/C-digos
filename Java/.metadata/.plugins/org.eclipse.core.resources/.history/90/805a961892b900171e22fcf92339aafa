@@ -1,0 +1,15 @@
+package controllers;
+
+import interfaces.ConsultarDiario;
+import interfaces.MudarEnturmacao;
+
+public class Validador {
+
+	public boolean validar(ConsultarDiario consultarDiario){
+		return false;
+	}
+	
+	public boolean validar(MudarEnturmacao reenturmarAluno){
+		return false;
+	}
+}

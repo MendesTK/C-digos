@@ -1,0 +1,31 @@
+package controllers;
+
+import DAO.AlunoDAO;
+import interfaces.CadastrarAluno;
+import interfaces.ConsultarDiario;
+import interfaces.MudarEnturmacao;
+
+public class AlunoController {
+	
+	public String cunsultar(MudarEnturmacao consultarAluno){
+		return null;
+		
+	}
+	
+	public void reenturmar(MudarEnturmacao reenturmarAluno){
+		Validador validador = new Validador();
+		boolean validacao = validador.validar(reenturmarAluno);
+		
+		if(validacao){
+			AlunoDAO alunoDAO = new AlunoDAO();
+			alunoDAO.salvar(reenturmarAluno);
+			
+		}
+	}
+	
+	public void cadastrarAluno(CadastrarAluno cadastrarAluno){
+		
+	}
+	
+	
+}

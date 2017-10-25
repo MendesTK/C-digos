@@ -1,0 +1,21 @@
+package DAO;
+
+import interfaces.CadastrarAluno;
+import interfaces.MudarEnturmacao;;
+
+public class AlunoDAO {
+
+	public String consultar(MudarEnturmacao consultarAluno){
+		return null;
+		
+	}
+	
+	public void salvar(MudarEnturmacao reenturmarAluno){
+		
+	}
+	
+	public void salvar(CadastrarAluno cadastrarAluno){
+		
+	}
+	
+}
