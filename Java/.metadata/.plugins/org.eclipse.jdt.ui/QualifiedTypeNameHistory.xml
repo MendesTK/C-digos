@@ -15,4 +15,5 @@
 <fullyQualifiedTypeName name="interfaces.EnturmarAluno"/>
 <fullyQualifiedTypeName name="DAO.TurmaDAO"/>
 <fullyQualifiedTypeName name="interfaces.CancelarMatricula"/>
+<fullyQualifiedTypeName name="javax.swing.SwingConstants"/>
 </qualifiedTypeNameHistroy>
