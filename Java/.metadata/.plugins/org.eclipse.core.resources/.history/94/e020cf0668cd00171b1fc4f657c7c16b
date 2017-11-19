@@ -1,0 +1,50 @@
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mcdonalds.DAO.*;
+import com.mcdonalds.view.*;
+import com.mcdonalds.modelo.*;
+
+public class Main {
+
+	public static void main(String[] args) throws SQLException {
+		
+		//Connection con = ConnectionFactory.getConnection();
+		
+		//System.out.println("Connected");
+		
+		//String query = "SELECT * FROM Produtos WHERE ID_Produto = ?";
+		//String query = "SELECT * FROM Produtos";
+		
+		//PreparedStatement pstmt = con.prepareStatement(query);
+		//pstmt.setInt(1, 2);
+		//ResultSet rs = pstmt.executeQuery();
+		
+		//List<Produtos> produtos = new ArrayList<Produtos>();
+		
+		/*while (rs.next()) {
+	         //System.out.println(rs.getInt("ID_Produto") + ", " + rs.getString("Nome_Produto"));
+			Produtos produto = new Produtos(rs.getInt("id_Produto"), rs.getString("nome_Produto"), rs.getFloat("valor_Unit") 
+					, rs.getFloat("desconto"), rs.getString("combo"));
+			produtos.add(produto);
+			
+			System.out.println(produto.getNome_Produto());
+	    }
+	      rs.close();
+	      pstmt.close();*/
+		
+		
+		
+		ProdutosDAO produtoDAO = new ProdutosDAO();
+		List<Produtos> produtos = 
+		
+
+	}
+
+}

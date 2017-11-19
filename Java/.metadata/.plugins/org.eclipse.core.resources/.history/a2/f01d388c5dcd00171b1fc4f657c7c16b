@@ -1,0 +1,19 @@
+package com.mcdonalds.modelo;
+
+public class MC_Donalds {
+	
+	private Integer item;
+	private int qtd;
+	private int id_item;
+	private String nomeItem;
+	private float ValorUnitario;
+	private float Descontos;
+	private float ValorTotal;
+	
+	
+	
+	
+	
+	
+
+}

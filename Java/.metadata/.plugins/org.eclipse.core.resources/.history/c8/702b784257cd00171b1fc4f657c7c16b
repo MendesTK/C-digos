@@ -1,0 +1,35 @@
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import com.mcdonalds.DAO.*;
+import com.mcdonalds.view.*;
+import com.mcdonalds.modelo.*;
+
+public class Main {
+
+	public static void main(String[] args) throws SQLException {
+		
+		/*MC_DonaldsDAO dao = new MC_DonaldsDAO();
+		ProdutosView view = new ProdutosView();
+		
+		List<MC_Donalds> Produtos = dao.visualizarProdutos(null);
+		
+		view.exibirProdutos(Produtos);*/
+		
+		//new ConnectionSQLSERVER().getConnection();
+		
+		//ConnectionFactory.getConnection();
+		System.out.print("Connected");
+		
+		String SQL = "SELECT * FROM Produtos";
+		
+		Statement createStatament = ConnectionFactory.getConnection().createStatement();
+		
+		createStatament.executeQuery(SQL);
+
+	}
+
+}

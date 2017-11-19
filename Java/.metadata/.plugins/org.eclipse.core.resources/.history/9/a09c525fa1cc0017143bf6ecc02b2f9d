@@ -1,0 +1,73 @@
+package com.mcdonalds.DAO;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class ConexaoMssql {
+
+	public void conectar(String text, String text2, String psenha) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Container criaPainel()
+    {
+        // Cria painel principal
+        JPanel painel = new  JPanel();
+        painel.setLayout(new BorderLayout());
+        painel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+ 
+        // Cria componente titulo
+        ltitulo = new JLabel("Microsoft SQL Server Express");
+ 
+        painel.add(ltitulo, BorderLayout.PAGE_START);
+ 
+        // Cria painel de usuario
+        JPanel painelDados = new JPanel(new GridLayout(0, 2, 10, 10));
+ 
+        // Cria componentes de usuario
+        lbanco   = new JLabel("Banco de dados:");
+        lusuario = new JLabel("Digite seu Usuario: ");
+        lsenha   = new JLabel("Digite sua Senha: ");
+        tbanco   = new JTextField();
+        tusuario = new JTextField();
+        tsenha   = new JPasswordField();
+ 
+        // Define tamanho dos campos
+        tusuario.setPreferredSize( new Dimension(120, 20));
+        tsenha.setPreferredSize( new Dimension(120, 20));
+ 
+        // Adiciona componentes no grid do painel
+        painelDados.add(Box.createVerticalStrut(10));
+        painelDados.add(Box.createVerticalStrut(10));
+        painelDados.add(lbanco);
+        painelDados.add(tbanco);
+        painelDados.add(lusuario);
+        painelDados.add(tusuario);
+        painelDados.add(lsenha);
+        painelDados.add(tsenha);
+        painelDados.add(Box.createVerticalStrut(10));
+        painelDados.add(Box.createVerticalStrut(10));
+ 
+        // Cria botão
+        botao = new JButton("Conectar");
+        botao.addActionListener(this);
+ 
+        // Adiciona componentes no painel principal
+        painel.add(painelDados);
+        painel.add(botao, BorderLayout.PAGE_END);
+ 
+        return painel;
+    }
+
+}

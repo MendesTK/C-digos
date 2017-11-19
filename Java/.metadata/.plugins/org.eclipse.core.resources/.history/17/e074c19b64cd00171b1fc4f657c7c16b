@@ -1,0 +1,18 @@
+package com.mcdonalds.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.mcdonalds.modelo.*;
+
+public class MC_DonaldsDAO {
+
+	private Connection con;
+	private PreparedStatement statament;
+	
+	public ProdutosDAO{
+		
+	}
+	
+}
+	

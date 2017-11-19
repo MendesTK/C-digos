@@ -1,0 +1,44 @@
+package com.mcdonalds.modelo;
+
+public class Produtos {
+
+	private int ID_Produto;
+	private String Nome_Produto;
+	private float Valor_Unit;
+	private float Desconto;
+	private String Combo;
+	
+	public Integer getID_Produto() {
+		return this.ID_Produto;
+	}
+	public void setID_Produto(Integer iD_Produto) {
+		ID_Produto = iD_Produto;
+	}
+	public String getNome_Produto() {
+		return Nome_Produto;
+	}
+	public void setNome_Produto(String nome_Produto) {
+		Nome_Produto = nome_Produto;
+	}
+	public Float getValor_Unit() {
+		return Valor_Unit;
+	}
+	public void setValor_Unit(Float valor_Unit) {
+		Valor_Unit = valor_Unit;
+	}
+	public Float getDesconto() {
+		return Desconto;
+	}
+	public void setDesconto(Float desconto) {
+		Desconto = desconto;
+	}
+	public String getCombo() {
+		return Combo;
+	}
+	public void setCombo(String combo) {
+		Combo = combo;
+	}
+	
+	
+	
+}

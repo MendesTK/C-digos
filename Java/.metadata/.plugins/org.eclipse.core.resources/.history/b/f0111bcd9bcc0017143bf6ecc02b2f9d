@@ -1,0 +1,44 @@
+package com.mcdonalds.DAO;
+
+import java.sql.*;
+
+public class ConectionSQLSERVER {
+
+	public static void main(String[] args) {
+		 
+	      /* Criando a variável para a string de conexão.
+	       * Note que esse não é o método mais seguro de conexão.
+	       * */
+		 String connectionUrl = "jdbc:sqlserver://192.168.0.107:1433;" + "databaseName=MC_Donalds;user=Mendes;password=123456";
+	      // Declarando os objetos do JDBC.
+	      Connection con = null;
+	      Statement stmt = null;
+	      ResultSet rs = null;
+
+	      try {
+	         // Estabelecendo a conexão
+	         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+	         con = DriverManager.getConnection(connectionUrl);
+
+	         // Criando um SQL e recuperando informações
+	         String SQL = "SELECT * FROM Produtos";
+	         stmt = con.createStatement();
+	         rs = stmt.executeQuery(SQL);
+
+	         // Apresentando os dados.
+	         while (rs.next()) {
+	            System.out.println(rs.getString(1) + " " + rs.getString(2) + rs.getString(3) + " " + rs.getString(4));
+	         }
+	      }
+
+	      // Trabalhando os erros
+	      catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	      finally {
+	         if (rs != null) try { rs.close(); } catch(Exception e) {}
+	         if (stmt != null) try { stmt.close(); } catch(Exception e) {}
+	         if (con != null) try { con.close(); } catch(Exception e) {}
+	      }
+	   }
+}

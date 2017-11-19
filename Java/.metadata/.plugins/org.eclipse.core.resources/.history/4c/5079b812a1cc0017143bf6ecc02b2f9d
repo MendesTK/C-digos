@@ -1,0 +1,17 @@
+package com.mcdonalds.DAO;
+
+import java.awt.Container;
+
+public class ConexaoMssql {
+
+	public void conectar(String text, String text2, String psenha) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Container criaPainel() {
+		return null;
+		
+	}
+
+}

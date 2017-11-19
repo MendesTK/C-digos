@@ -1,0 +1,11 @@
+package com.mcdonalds.DAO;
+
+import java.sql.*;
+
+import com.mcdonalds.modelo.*;
+
+public class MC_DonaldsDAO {
+
+	
+	
+}

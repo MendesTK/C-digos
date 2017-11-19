@@ -1,0 +1,40 @@
+package com.mcdonalds.DAO;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mcdonalds.modelo.*;
+
+public class MC_DonaldsDAO {
+
+	private List<MC_Donalds> Produtos;
+	private Connection mConn;
+	
+	public MC_DonaldsDAO(){
+		Produtos = new ArrayList<MC_Donalds>();
+		mConn = (new ConnectionSQLSERVER()).getConnection();
+	}
+	
+	public List<MC_Donalds> visualizarProdutos(MC_Donalds v){
+		
+		try{
+			String sql = "SELECT ID_Produto, Nome_Produto FROM Produtos";
+			PreparedStatement stmt = mConn.prepareStatement(sql);
+
+			stmt.setInt(1, v.getId_item());
+			stmt.setString(2, v.getNomeItem());		
+			stmt.execute();
+			stmt.close();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return Produtos;
+		
+		
+	
+	}
+}
+	

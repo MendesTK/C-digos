@@ -1,0 +1,10 @@
+package com.mcdonalds.DAO;
+
+public class ConexaoMssql {
+
+	public void conectar(String text, String text2, String psenha) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

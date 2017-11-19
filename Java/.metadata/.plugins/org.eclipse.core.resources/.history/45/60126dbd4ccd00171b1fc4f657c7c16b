@@ -1,0 +1,18 @@
+package com.mcdonalds.DAO;
+
+import java.sql.*;
+
+public class ConnectionSQLSERVER {
+
+	public Connection getConnection(){
+		try{
+			
+			return DriverManager
+					.getConnection("jdbc:sqlserver://192.168.0.107:1433;" + "databaseName=MC_Donalds;user=Mendes;password=123456");
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException();
+		}
+	}
+}
