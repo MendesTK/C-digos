@@ -31,13 +31,17 @@ public class CalcView {
 		txtNum1 = new JTextField(30);
 		txtNum2 = new JTextField(30);
 		op = new JComboBox<>();
+		op.addItem("+");
+		op.addItem("-");
+		op.addItem("*");
+		op.addItem("/");
 		
 		frame.add(txtNum1);
 		frame.add(op);
 		frame.add(txtNum2);
 		frame.add(btnCalc);
 		
-		btnCalc.addActionListener(arg0);
+		btnCalc.addActionListener(new CalcController(op, txtNum1, txtNum2));
 		
 		frame.setVisible(true);
 		

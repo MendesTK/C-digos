@@ -1,0 +1,27 @@
+package com.schoolofnet.mvc;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
+public class CalcController implements ActionListener {
+
+	private static JTextField Num1 = new JTextField(30);
+	private static JTextField Num2 = new JTextField(30);
+	private static JComboBox op = new JComboBox();
+	
+	public CalcController(JComboBox op, JTextField txtNum1, JTextField txtNum2) {
+		this.op = op;
+		this.Num1 = Num1;
+		this.Num2 = Num2;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
