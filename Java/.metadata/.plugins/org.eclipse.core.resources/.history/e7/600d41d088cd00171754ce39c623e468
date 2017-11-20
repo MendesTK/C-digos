@@ -1,0 +1,20 @@
+package com.schoolofnet;
+
+import javax.swing.JFrame;
+
+public class EventsSwing {
+
+	private static JFrame mainframe;
+
+	
+	public static void main(String[] args){
+		mainframe = new JFrame();
+
+		mainframe.setBounds(100, 100, 250, 200);
+		
+
+		mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		mainframe.setVisible(true);
+	}
+}
+
