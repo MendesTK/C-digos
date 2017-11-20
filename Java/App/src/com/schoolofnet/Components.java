@@ -33,11 +33,11 @@ public class Components {
 		mainFrame = new JFrame();
 		mainFrame.setBounds(100, 100, 400, 200);
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+		mainFrame.setLayout(new GridLayout(2, 0));
 		
 		mainPanel = new JPanel();
-		//mainPanel.setLayout(new FlowLayout());
-		mainPanel.setLayout(new GridLayout(2, 0));
+		mainPanel.setLayout(new FlowLayout());
+		
 		
 		mainFrame.add(mainPanel);
 		
