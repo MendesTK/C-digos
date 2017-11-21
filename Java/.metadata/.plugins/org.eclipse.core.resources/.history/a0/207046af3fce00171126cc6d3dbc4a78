@@ -44,7 +44,7 @@ public class Main {
 		
 		
 		//Listar os produtos
-		//ProdutosDAO produtosDAO = new ProdutosDAO();
+		ProdutosDAO produtosDAO = new ProdutosDAO();
 		List<Produtos> produtos = produtosDAO.findAll();
 		
 		for (int i = 0; i < produtos.size(); i++){

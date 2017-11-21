@@ -44,7 +44,7 @@ public class Main {
 		
 		
 		//Listar os produtos
-		//ProdutosDAO produtosDAO = new ProdutosDAO();
+		/*ProdutosDAO produtosDAO = new ProdutosDAO();
 		List<Produtos> produtos = produtosDAO.findAll();
 		
 		for (int i = 0; i < produtos.size(); i++){
@@ -53,7 +53,7 @@ public class Main {
 			System.out.println(produto.getId_Produto() + produto.getNome_Produto() 
 						+ produto.getValor_Unit() + produto.getDesconto() + produto.getCombo());
 			
-		}
+		}*/
 		
 		//listar apenas 1 produto informando o id
 		/*ProdutosDAO produtosDAO = new ProdutosDAO();
@@ -69,7 +69,7 @@ public class Main {
 		//produtosDAO.insert(new Produtos("Café", 5, 0, "N"));
 		
 		//deletar um item
-		//produtosDAO.remove(new Produtos(7));
+		//produtosDAO.remove(new Produtos(6));
 		
 		
 
