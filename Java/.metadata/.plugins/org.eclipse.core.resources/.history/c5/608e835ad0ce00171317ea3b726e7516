@@ -1,0 +1,17 @@
+package com.mcdonalds.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class ItensPedidoDAO {
+
+	private Connection con = null;
+	private PreparedStatement statement = null;
+	
+	public ItensPedidoDAO(){
+		con = ConnectionFactory.getConnection();
+	}
+	
+	
+	
+}
