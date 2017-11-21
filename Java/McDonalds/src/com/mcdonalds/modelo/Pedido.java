@@ -10,6 +10,10 @@ public class Pedido {
 	private Float desconto;
 	private Float valorTotal;
 	
+	private int pedidoAtual;
+	
+	
+
 	public Pedido(){
 		
 	}
@@ -20,8 +24,11 @@ public class Pedido {
 		this.valor = valor;
 		this.desconto = desconto;
 		this.valorTotal = valorTotal;
-		
-		
+
+	}
+	
+	public Pedido(int pedidoAtual){
+		this.pedidoAtual = pedidoAtual;
 	}
 	
 	
@@ -55,6 +62,13 @@ public class Pedido {
 	}
 	public void setValorTotal(Float valorTotal) {
 		this.valorTotal = valorTotal;
+	}
+	public int getPedidoAtual() {
+		return this.pedidoAtual;
+	}
+
+	public void setPedidoAtual(int pedidoAtual) {
+		this.pedidoAtual = pedidoAtual;
 	}
 	
 	

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.mcdonalds.DAO.PedidoDAO;
 import com.mcdonalds.DAO.ProdutosDAO;
 import com.mcdonalds.view.*;
 import com.mcdonalds.modelo.*;
@@ -70,6 +71,12 @@ public class Main {
 		
 		//deletar um item
 		//produtosDAO.remove(new Produtos(7));
+		
+		PedidoDAO pedidoDAO = new PedidoDAO();
+		
+		int pedidoAtual = pedidoDAO.PedidoAtual();
+		
+		System.out.println(pedidoAtual);
 		
 		
 

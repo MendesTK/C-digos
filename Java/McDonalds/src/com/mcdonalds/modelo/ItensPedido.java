@@ -16,7 +16,6 @@ public class ItensPedido {
 	private int informarQtd;
 	private int informarIDP;
 	
-	
 
 	public ItensPedido(){
 		
@@ -26,6 +25,7 @@ public class ItensPedido {
 		this.informarIDP = informarIDP;
 		this.informarQtd = informarQtd;
 	}
+	
 	
 	public ItensPedido(Integer id, Integer pedido, Date dataPedido, String nome_Produto, Integer id_Produto
 			, Float valor_Unit, Integer qtd, Float desconto){
@@ -39,6 +39,17 @@ public class ItensPedido {
 		this.qtd = qtd;
 		this.desconto = desconto;
 		
+		
+	}
+	
+	public ItensPedido(Integer pedido, String nome_Produto, Integer id_Produto, Float valor_Unit
+			, Integer qtd, Float desconto){
+		this.pedido = pedido;
+		this.nome_Produto = nome_Produto;
+		this.id_Produto = id_Produto;
+		this.valor_Unit = valor_Unit;
+		this.qtd = qtd;
+		this.desconto = desconto;
 		
 	}
 	

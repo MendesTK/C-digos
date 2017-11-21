@@ -3,6 +3,8 @@ package com.mcdonalds.DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mcdonalds.modelo.ItensPedido;
 
@@ -14,7 +16,7 @@ public class ItensPedidoDAO {
 	public ItensPedidoDAO(){
 		con = ConnectionFactory.getConnection();
 	}
-	
+	//Inserir os itens de um pedido
 	public void InserirItens(ItensPedido itensInf) throws SQLException {
 		String sql = "EXEC upsInserirItens ?, ?";
 		
@@ -24,5 +26,15 @@ public class ItensPedidoDAO {
 		
 		statement.execute();
 	}
+	//Exibir itens atuais
+	public List<ItensPedido> ExibirItensNota() throws SQLException {
+		String sql = "";
+		
+		List<ItensPedido> itens = new ArrayList<ItensPedido>();
+		
+		
+		return itens;
+	}
+	
 	
 }
