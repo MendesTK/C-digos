@@ -1,0 +1,24 @@
+package com.univille.chat;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.Writer;
+import java.net.Socket;
+
+public class Cliente {
+	
+	private static final long serialVersionUID = 1L;
+	private Socket socket;
+	private OutputStream on;
+	private Writer ouw;
+	private BufferedWriter bfw;
+	private int ip;
+	private int porta;
+	private String nome;
+	
+	public Cliente() throws IOException{
+		System.out.println("Informe endereço de IP, porta e nome.");
+		
+	}
+}

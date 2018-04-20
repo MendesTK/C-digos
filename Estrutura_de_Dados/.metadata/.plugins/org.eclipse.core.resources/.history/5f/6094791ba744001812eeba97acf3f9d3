@@ -1,0 +1,8 @@
+package com.univille.chat;
+
+
+
+public class Servidor extends Thread {
+	
+	
+}
