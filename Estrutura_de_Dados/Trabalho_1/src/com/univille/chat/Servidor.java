@@ -79,6 +79,14 @@ public class Servidor extends Thread {
 			server = new ServerSocket(porta);
 			clientes = new ArrayList<BufferedWriter>();
 			System.out.println("Servidor ativo na porta: " + porta);
+			
+			while(true){
+				System.out.println("Aguardando Conexão");
+				Socket con = server.accept();
+				System.out.println("Cliente conectado");
+				Thread t = new Servidor(con);
+				t.start();
+			}
 		} catch (Exception e){
 			e.printStackTrace();
 		}
