@@ -7,4 +7,5 @@ public interface PilhaInterface {
 	public boolean isEmpty();
 	public boolean isFull();
 	public void clear();
+	
 }
