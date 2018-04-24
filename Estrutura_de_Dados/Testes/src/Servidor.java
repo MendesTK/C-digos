@@ -4,119 +4,134 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Vector;
+import java.util.*;
 
-public class Servidor extends Thread{
-	
-	private static Vector clientes;
-	private Socket con;
-	private String nomeUsuario;
-	private static List<String> listaNomes;
+public class Servidor extends Thread {
+    private static Map<String, PrintStream> MAP_CLIENTES;
+    private Socket conexao;
+    private String nomeCliente;
+    private static List<String> LISTA_DE_NOMES = new ArrayList<String>();
 
-	public Servidor(Socket con){
-		this.con = con;
-	}
-	
-	public boolean guardaNome(String novoNome){
-		for(int i = 0; i < listaNomes.size(); i++){
-			if(listaNomes.get(i).equals(novoNome)){
-				return true;
-			}
-		}
-		listaNomes.add(novoNome);
-		return false;
-	}
-	
-	public void removeNome(String nome){
-		for(int i = 0; i < listaNomes.size(); i++){
-			if(listaNomes.get(i).equals(nome)){
-				listaNomes.remove(i);
-			}
-		}
-	}
-	
-	private void sendToAll(PrintStream saida, String acao, String msg) throws IOException {
-		Enumeration e = clientes.elements();
-		
-		while(e.hasMoreElements()){
-			PrintStream chat = (PrintStream) e.nextElement();
-			
-			if(chat != saida){
-				chat.println(this.nomeUsuario + acao + msg);
-			}
-		}
-		
-	}
-	
-	public void run(){
-		try{
-			BufferedReader entrada = new BufferedReader(new InputStreamReader(this.con.getInputStream()));
-			PrintStream saida = new PrintStream(this.con.getOutputStream());
-			this.nomeUsuario = entrada.readLine();
-			
-			if(guardaNome(this.nomeUsuario)){
-				saida.print("Este nome já está em uso!");
-				clientes.add(saida);
-				this.con.close();
-				return;
-			}
-			else{
-				System.out.println(this.nomeUsuario + " se conectou ao servidor!");
-			}
-			
-			if(this.nomeUsuario == null){
-				return;
-			}
-			
-			clientes.add(saida);
-			String msg = entrada.readLine();
-			
-			while(msg != null && !(msg.trim().equals(""))){
-				sendToAll(saida, " Escreveu: ", msg);
-				msg  = entrada.readLine();
-			}
-			
-			System.out.println(this.nomeUsuario + " Saiu do chat!");
-			sendToAll(saida, " saiu ", "do chat!");
-			removeNome(this.nomeUsuario);
-			clientes.remove(saida);
-			this.con.close();
-		} catch (IOException e){
-			e.printStackTrace();
-		}
-	}
+    public Servidor(Socket socket) {
+        this.conexao = socket;
+    }
 
-	
-	
-	
-	public static void main(String[] args){
-		Scanner entrada = new Scanner(System.in);
-		clientes = new Vector();
-		listaNomes = new ArrayList();
-		try{
-			int porta;
-			System.out.print("Informe a porta: ");
-			porta = entrada.nextInt();
-			ServerSocket server = new ServerSocket(porta);
-			System.out.println("Servidor rodando na porta "+ porta);
-			
-			while(true){
-				Socket con = server.accept();
-				Thread t = new Servidor(con);
-				t.start();
-			}
-		}catch (IOException e){
-			e.printStackTrace();
-		}
-		
-	}
-	
-	
-	
-	
-	
+    public boolean armazena(String newName) {
+        for (int i = 0; i < LISTA_DE_NOMES.size(); i++) {
+            if (LISTA_DE_NOMES.get(i).equals(newName))
+                return true;
+        }
+        LISTA_DE_NOMES.add(newName);
+        return false;
+    }
+
+    public void remove(String oldName) {
+        for (int i = 0; i < LISTA_DE_NOMES.size(); i++) {
+            if (LISTA_DE_NOMES.get(i).equals(oldName))
+                LISTA_DE_NOMES.remove(oldName);
+        }
+    }
+
+    public static void main(String args[]) {
+        MAP_CLIENTES = new HashMap<String, PrintStream>();
+        try {
+            ServerSocket server = new ServerSocket(5555);
+            System.out.println("Servidor rodando na porta 5555");
+            while (true) {
+                Socket conexao = server.accept();
+                Thread t = new Servidor(conexao);
+                t.start();
+            }
+        } catch (IOException e) {
+            System.out.println("IOException: " + e);
+        }
+    }
+
+    public void run() {
+        try {
+            BufferedReader entrada = new BufferedReader(new InputStreamReader(this.conexao.getInputStream()));
+            PrintStream saida = new PrintStream(this.conexao.getOutputStream());
+            this.nomeCliente = entrada.readLine();
+            if (armazena(this.nomeCliente)) {
+                saida.println("Este nome ja existe! Conecte novamente com outro Nome.");
+                this.conexao.close();
+                return;
+            } else {
+                //mostra o nome do cliente conectado ao servidor
+                System.out.println(this.nomeCliente + " : Conectado ao Servidor!");
+
+                String s = "";
+                for (String aux : LISTA_DE_NOMES) {
+                    if (!aux.equalsIgnoreCase(this.nomeCliente)) {
+                        s = s + aux + " ";
+                    }
+                }
+                //Quando o cliente se conectar recebe todos que estao conectados
+                saida.println("Conectados: " + s);
+
+                //envia lista para todos assim que qualquer cliente se conecta
+                sendListToAll(this.nomeCliente);
+            }
+
+            if (this.nomeCliente == null) {
+                return;
+            }
+            //adiciona os dados de saida do cliente no objeto MAP_CLIENTES
+            //A chave sera o nome e valor o printstream
+            MAP_CLIENTES.put(this.nomeCliente, saida);
+
+            String[] msg = entrada.readLine().split(":");
+            while (msg != null && !(msg[0].trim().equals(""))) {
+                send(saida, " escreveu: ", msg);
+                msg = entrada.readLine().split(":");
+            }
+            System.out.println(this.nomeCliente + " saiu do bate-papo!");
+            String[] out = {" do bate-papo!"};
+            send(saida, " saiu", out);
+            remove(this.nomeCliente);
+
+            MAP_CLIENTES.remove(this.nomeCliente);
+
+            this.conexao.close();
+        } catch (IOException e) {
+            System.out.println("Falha na Conexao... .. ." + " IOException: " + e);
+        }
+    }
+
+    /**
+     * Se o array da msg tiver tamanho igual a 1, entao envia para todos
+     * Se o tamanho for 2, envia apenas para o cliente escolhido
+     */
+    public void send(PrintStream saida, String acao, String[] msg) {
+        out:
+        for (Map.Entry<String, PrintStream> cliente : MAP_CLIENTES.entrySet()) {
+            PrintStream chat = cliente.getValue();
+            if (chat != saida) {
+                if (msg.length == 1) {
+                    chat.println(this.nomeCliente + acao + msg[0]);
+                } else {
+                    if (msg[1].equalsIgnoreCase(cliente.getKey())) {
+                        chat.println(this.nomeCliente + acao + msg[0]);
+                        break out;
+                    }
+                }
+            }
+        }
+    }
+
+    public void sendListToAll(String nome) {
+        for (Map.Entry<String, PrintStream> cliente : MAP_CLIENTES.entrySet()) {
+            if (!cliente.getKey().equalsIgnoreCase(nome)) {
+                String aux = "";
+                for (String s : LISTA_DE_NOMES) {
+                    if (!s.equalsIgnoreCase(cliente.getKey())) {
+                        aux = aux + s + " ";
+                    }
+                }
+                PrintStream chat = cliente.getValue();
+                chat.println("[" + aux + "]");
+                chat.flush();
+            }
+        }
+    }
 }
