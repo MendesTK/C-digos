@@ -32,20 +32,6 @@ public class Servidor extends Thread {
         }
     }
 
-    public static void main(String args[]) {
-        MAP_CLIENTES = new HashMap<String, PrintStream>();
-        try {
-            ServerSocket server = new ServerSocket(5555);
-            System.out.println("Servidor rodando na porta 5555");
-            while (true) {
-                Socket conexao = server.accept();
-                Thread t = new Servidor(conexao);
-                t.start();
-            }
-        } catch (IOException e) {
-            System.out.println("IOException: " + e);
-        }
-    }
 
     public void run() {
         try {
@@ -132,6 +118,23 @@ public class Servidor extends Thread {
                 chat.println("[" + aux + "]");
                 chat.flush();
             }
+        }
+    }
+    
+    
+    
+    public static void main(String args[]) {
+        MAP_CLIENTES = new HashMap<String, PrintStream>();
+        try {
+            ServerSocket server = new ServerSocket(8080);
+            System.out.println("Servidor rodando na porta 5555");
+            while (true) {
+                Socket conexao = server.accept();
+                Thread t = new Servidor(conexao);
+                t.start();
+            }
+        } catch (IOException e) {
+            System.out.println("IOException: " + e);
         }
     }
 }

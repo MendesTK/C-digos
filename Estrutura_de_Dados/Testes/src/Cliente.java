@@ -8,15 +8,15 @@ import java.net.Socket;
 
 public class Cliente extends Thread {
     // parte que controla a recepcao de mensagens do cliente
-    private Socket conexao;
+    private Socket con;
     // construtor que recebe o socket do cliente
     public Cliente(Socket socket) {
-        this.conexao = socket;
+        this.con = socket;
     }
     public static void main(String args[])
     {
         try {
-            //Instancia do atributo conexao do tipo Socket, conecta a IP do Servidor, Porta
+            //Instancia do atributo con do tipo Socket, conecta a IP do Servidor, Porta
             Socket socket = new Socket("127.0.0.1", 5555);
             //Instancia do atributo saida, obtem os objetos que permitem controlar o fluxo de comunicacao
             PrintStream saida = new PrintStream(socket.getOutputStream());
@@ -39,7 +39,7 @@ public class Cliente extends Thread {
                 saida.println(msg);
             }
         } catch (IOException e) {
-            System.out.println("Falha na Conexao... .. ." + " IOException: " + e);
+            System.out.println("Falha na con... .. ." + " IOException: " + e);
         }
     }
     // execu��o da thread
@@ -47,16 +47,16 @@ public class Cliente extends Thread {
     {
         try {
             //recebe mensagens de outro cliente atraves do servidor
-            BufferedReader entrada = new BufferedReader(new InputStreamReader(this.conexao.getInputStream()));
+            BufferedReader entrada = new BufferedReader(new InputStreamReader(this.con.getInputStream()));
             //cria variavel de mensagem
             String msg;
             while (true)
             {
                 // pega o que o servidor enviou
                 msg = entrada.readLine();
-                //se a mensagem contiver dados, passa pelo if, caso contrario cai no break e encerra a conexao
+                //se a mensagem contiver dados, passa pelo if, caso contrario cai no break e encerra a con
                 if (msg == null) {
-                    System.out.println("Conexao encerrada!");
+                    System.out.println("con encerrada!");
                     System.exit(0);
                 }
                 System.out.println();
