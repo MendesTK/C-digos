@@ -1,0 +1,60 @@
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Cliente extends Thread {
+
+    private Socket con;
+
+    public Cliente(Socket socket) {
+        this.con = socket;
+    }
+
+    
+    public void run(){
+        try {
+            BufferedReader entrada = new BufferedReader(new InputStreamReader(this.con.getInputStream()));
+            String msg;
+            while (true){
+                msg = entrada.readLine();
+                if (msg == null) {
+                    System.out.println("Conexão encerrada!");
+                    System.exit(0);
+                }
+                System.out.println();
+                System.out.println(msg);
+                //System.out.print("Responder > ");
+            }
+        } catch (IOException e) {
+           e.printStackTrace();
+        }
+    }
+    
+    public static void main(String args[]){
+    	Scanner entrada = new Scanner(System.in);
+    	try {
+        	Socket socket = new Socket("localhost", 8080);
+            PrintStream saida = new PrintStream(socket.getOutputStream());
+            //BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+            System.out.print("Digite seu nome: ");
+            String nome = entrada.nextLine();
+            saida.println(nome.toUpperCase());
+            Thread thread = new Cliente(socket);
+            thread.start();
+            String msg;
+            while (true){
+                System.out.print("Mensagem > ");
+                msg = entrada.nextLine();
+                saida.println(msg);
+            }
+        } catch (IOException e) {
+            System.out.println("Falha na con... .. ." + " IOException: " + e);
+        }
+    	entrada.close();
+    }
+}

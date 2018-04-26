@@ -8,12 +8,12 @@ import java.util.*;
 
 public class Servidor extends Thread {
     private static Map<String, PrintStream> MAP_CLIENTES;
-    private Socket conexao;
+    private Socket con;
     private String nomeCliente;
     private static List<String> LISTA_DE_NOMES = new ArrayList<String>();
 
     public Servidor(Socket socket) {
-        this.conexao = socket;
+        this.con = socket;
     }
 
     public boolean armazena(String newName) {
@@ -35,12 +35,12 @@ public class Servidor extends Thread {
 
     public void run() {
         try {
-            BufferedReader entrada = new BufferedReader(new InputStreamReader(this.conexao.getInputStream()));
-            PrintStream saida = new PrintStream(this.conexao.getOutputStream());
+            BufferedReader entrada = new BufferedReader(new InputStreamReader(this.con.getInputStream()));
+            PrintStream saida = new PrintStream(this.con.getOutputStream());
             this.nomeCliente = entrada.readLine();
             if (armazena(this.nomeCliente)) {
                 saida.println("Este nome ja existe! Conecte novamente com outro Nome.");
-                this.conexao.close();
+                this.con.close();
                 return;
             } else {
                 //mostra o nome do cliente conectado ao servidor
@@ -62,33 +62,29 @@ public class Servidor extends Thread {
             if (this.nomeCliente == null) {
                 return;
             }
-            //adiciona os dados de saida do cliente no objeto MAP_CLIENTES
-            //A chave sera o nome e valor o printstream
+
             MAP_CLIENTES.put(this.nomeCliente, saida);
 
             String[] msg = entrada.readLine().split(":");
             while (msg != null && !(msg[0].trim().equals(""))) {
-                send(saida, " escreveu: ", msg);
+                sendToAll(saida, " escreveu: ", msg);
                 msg = entrada.readLine().split(":");
             }
             System.out.println(this.nomeCliente + " saiu do bate-papo!");
             String[] out = {" do bate-papo!"};
-            send(saida, " saiu", out);
+            sendToAll(saida, " saiu", out);
             remove(this.nomeCliente);
 
             MAP_CLIENTES.remove(this.nomeCliente);
 
-            this.conexao.close();
+            this.con.close();
         } catch (IOException e) {
-            System.out.println("Falha na Conexao... .. ." + " IOException: " + e);
+            e.printStackTrace();
         }
     }
 
-    /**
-     * Se o array da msg tiver tamanho igual a 1, entao envia para todos
-     * Se o tamanho for 2, envia apenas para o cliente escolhido
-     */
-    public void send(PrintStream saida, String acao, String[] msg) {
+
+    public void sendToAll(PrintStream saida, String acao, String[] msg) {
         out:
         for (Map.Entry<String, PrintStream> cliente : MAP_CLIENTES.entrySet()) {
             PrintStream chat = cliente.getValue();
@@ -127,10 +123,10 @@ public class Servidor extends Thread {
         MAP_CLIENTES = new HashMap<String, PrintStream>();
         try {
             ServerSocket server = new ServerSocket(8080);
-            System.out.println("Servidor rodando na porta 5555");
+            System.out.println("Servidor rodando na porta 8080");
             while (true) {
-                Socket conexao = server.accept();
-                Thread t = new Servidor(conexao);
+                Socket con = server.accept();
+                Thread t = new Servidor(con);
                 t.start();
             }
         } catch (IOException e) {
