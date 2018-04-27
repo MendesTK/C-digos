@@ -14,6 +14,11 @@ public class Elemento {
 		return anterior; 
 	}
 	
+	public Object getValor() { 
+		return valor; 
+	}
+	
+	
 	
 
 }

@@ -22,7 +22,7 @@ public class Cliente extends Thread {
             String msg;
             while (true){
                 msg = entrada.readLine();
-                if (msg == "/Sair") {
+                if (msg.equals("/Sair")) {
                     System.out.println("Saiu com sucesso!");
                     System.exit(0);
                 }
@@ -38,7 +38,7 @@ public class Cliente extends Thread {
     public static void main(String args[]){
     	Scanner entrada = new Scanner(System.in);
     	try {
-        	Socket socket = new Socket("localhost", 8080);
+        	Socket socket = new Socket("localhost", 2222);
             PrintStream saida = new PrintStream(socket.getOutputStream());
             System.out.print("Digite seu nome: ");
             String nome = entrada.nextLine();

@@ -16,7 +16,7 @@ public class Servidor extends Thread {
         this.con = socket;
     }
 
-    public boolean armazena(String newName) {
+    public boolean guardaNome(String newName) {
         for (int i = 0; i < LISTA_DE_NOMES.size(); i++) {
             if (LISTA_DE_NOMES.get(i).equals(newName))
                 return true;
@@ -38,8 +38,8 @@ public class Servidor extends Thread {
             BufferedReader entrada = new BufferedReader(new InputStreamReader(this.con.getInputStream()));
             PrintStream saida = new PrintStream(this.con.getOutputStream());
             this.nomeCliente = entrada.readLine();
-            if (armazena(this.nomeCliente)) {
-                saida.println("Este nome ja existe! Conecte novamente com outro Nome.");
+            if (guardaNome(this.nomeCliente)) {
+                saida.println("Nick name já existe, tente novamente!");
                 this.con.close();
                 return;
             } else {
@@ -122,15 +122,15 @@ public class Servidor extends Thread {
     public static void main(String args[]) {
         MAP_CLIENTES = new HashMap<String, PrintStream>();
         try {
-            ServerSocket server = new ServerSocket(8080);
-            System.out.println("Servidor rodando na porta 8080");
+            ServerSocket server = new ServerSocket(2222);
+            System.out.println("Servidor rodando na porta 2222");
             while (true) {
                 Socket con = server.accept();
                 Thread t = new Servidor(con);
                 t.start();
             }
         } catch (IOException e) {
-            System.out.println("IOException: " + e);
+            e.printStackTrace();
         }
     }
 }

@@ -1,0 +1,5 @@
+package PilhaDinamica;
+
+public class PilhaDinamica implements PilhaInterface {
+
+}

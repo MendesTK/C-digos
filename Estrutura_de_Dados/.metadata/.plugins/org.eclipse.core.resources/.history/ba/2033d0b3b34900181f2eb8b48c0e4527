@@ -1,0 +1,20 @@
+package PilhaDinamica;
+
+public class PilhaDinamica implements PilhaInterface {
+	
+	private Elemento topo;
+	
+	public boolean isEmpty() {
+		return topo == null;
+	}
+
+	public boolean isFull() {
+		return false;
+	}
+	
+	public void push(Object o) throws Exception {
+		System.out.println("Adicionando " + o);
+		topo = new Elemento(o, topo);
+	}
+
+}

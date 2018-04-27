@@ -53,5 +53,11 @@ public class PilhaEstatica implements PilhaInterface{
 		}
 		
 	}
+	
+	public void percorrer() {
+		for (int i = 0; i < topo; i++) {
+			System.out.println("Valor: " + pilha[i]);
+		}
+	}
 
 }
