@@ -1,0 +1,26 @@
+package FilaEstatica;
+
+public class FilaEstatica {
+	
+	private Object[] fila;
+	private int cabeca;
+	private int cauda;
+	
+	public FilaEstatica(int capacidade){
+		fila = new Object[capacidade];
+		cabeca = 0;
+	}
+	
+	public boolean isFull(){
+		
+	}
+	
+	public boolean isEmpty(){
+		
+	}
+	
+	public void add(Object o){
+		
+	}
+
+}
