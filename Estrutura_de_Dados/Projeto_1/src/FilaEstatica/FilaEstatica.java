@@ -27,12 +27,30 @@ public class FilaEstatica {
 		System.out.println("Adicionando o "+ elemento +" a fila.");
 		fila[(cauda+1)%fila.length] = elemento;
 		cauda = (cauda+1)%fila.length;
+		//System.out.println(cauda+ ", "+ cabeca);
+		if(cabeca < 0){
+			cabeca+=1;
+		}
 	}
 	
 	public Object remove() throws Exception{
 		if(this.isEmpty()){
 			throw new Exception("A Fila está vázia.");
 		}
+		Object o = fila[cabeca];
+		fila[cabeca] = null;
+		if(cabeca < fila.length){
+			cabeca+=1;
+		}
+		else{
+			cabeca=0;
+		}
+		if(cabeca == cauda){
+			cabeca= -1;
+		}
+		System.out.println("Removendo " + o + " da fila!");
+		return o;
+		
 	}
 	
 	public void clear(){

@@ -1,0 +1,10 @@
+package FilaEstatica;
+
+public class main {
+
+	public static void main(String[] args) {
+		FilaEstatica pilha = new FilaEstatica(5);
+
+	}
+
+}
