@@ -1,0 +1,20 @@
+package FilaEstatica;
+
+public class main {
+
+	public static void main(String[] args) throws Exception  {
+		FilaEstatica pilha = new FilaEstatica(10);
+		pilha.add(1);
+		pilha.add(2);
+		pilha.add(3);
+		pilha.add(4);
+		pilha.add(5);
+		pilha.add(6);
+		
+		pilha.clear();
+		
+		
+
+	}
+
+}

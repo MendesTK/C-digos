@@ -1,0 +1,18 @@
+package FilaEstatica;
+
+public class main {
+
+	public static void main(String[] args) throws Exception  {
+		FilaEstatica pilha = new FilaEstatica(1000000);
+		
+		for(int i = 1; i < 1000001; i++){
+			pilha.add(i);
+		}
+		
+		pilha.clear();
+		
+		
+
+	}
+
+}

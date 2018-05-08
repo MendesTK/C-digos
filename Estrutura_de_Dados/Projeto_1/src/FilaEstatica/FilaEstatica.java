@@ -27,7 +27,6 @@ public class FilaEstatica {
 		System.out.println("Adicionando o "+ elemento +" a fila.");
 		fila[(cauda+1)%fila.length] = elemento;
 		cauda = (cauda+1)%fila.length;
-		//System.out.println(cauda+ ", "+ cabeca);
 		if(cabeca < 0){
 			cabeca+=1;
 		}
@@ -39,22 +38,31 @@ public class FilaEstatica {
 		}
 		Object o = fila[cabeca];
 		fila[cabeca] = null;
-		if(cabeca < fila.length){
-			cabeca+=1;
+		
+		if(cabeca == cauda){
+			cabeca=-1;
+			cauda=-1;
+		}
+		else if(cabeca < fila.length-1){
+			cabeca++;
 		}
 		else{
 			cabeca=0;
 		}
-		if(cabeca == cauda){
-			cabeca= -1;
-		}
-		System.out.println("Removendo " + o + " da fila!");
+		
+		System.out.println("Removendo " + o + " da fila.");
 		return o;
 		
 	}
 	
 	public void clear(){
-		
+		while(!this.isEmpty()){
+			try{
+				this.remove();
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+		}
 	}
 
 }
