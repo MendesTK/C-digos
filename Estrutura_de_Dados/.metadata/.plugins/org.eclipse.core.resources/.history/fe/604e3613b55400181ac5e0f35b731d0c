@@ -1,0 +1,40 @@
+package FilaEstatica;
+
+public class main {
+
+	public static void main(String[] args) throws Exception  {
+		FilaEstatica fila = new FilaEstatica(6);
+		
+		/*
+		for(int i = 1; i < 7; i++){
+			fila.add(i);
+		}
+		*/
+		
+		//exercicio 1
+		/*
+		fila.add(20);
+		fila.add(20.8);
+		fila.add(20.3);
+		fila.add(44.5);
+		fila.add(33.33);
+		fila.add(20.9);
+		
+		fila.show();
+		
+		fila.remove();
+		fila.remove();
+		
+		fila.show();
+		
+		fila.clear();
+		*/
+		
+		
+		
+		
+		
+
+	}
+
+}

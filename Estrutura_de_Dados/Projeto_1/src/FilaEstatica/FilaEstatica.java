@@ -24,7 +24,7 @@ public class FilaEstatica {
 		if(this.isFull()){
 			throw new Exception("Fila cheia");
 		}
-		System.out.println("Adicionando o "+ elemento +" a fila.");
+		System.out.println("Adicionando o "+ elemento +" a fila. \n");
 		fila[(cauda+1)%fila.length] = elemento;
 		cauda = (cauda+1)%fila.length;
 		if(cabeca < 0){
@@ -50,7 +50,7 @@ public class FilaEstatica {
 			cabeca=0;
 		}
 		
-		System.out.println("Removendo " + o + " da fila.");
+		System.out.println("Removendo " + o + " da fila. \n");
 		return o;
 		
 	}
@@ -62,6 +62,18 @@ public class FilaEstatica {
 			}catch (Exception e){
 				e.printStackTrace();
 			}
+		}
+	}
+	
+	public void show() {
+		if (!this.isEmpty()) {
+			int i = cabeca;
+			int valor = 1;
+			for (i = cabeca; i != cauda; i = (i+1) % fila.length) {
+				System.out.println("Valor " + valor + " " + fila[i]);
+				valor++;
+			}
+			System.out.println("Valor " + valor + " " + fila[i]);
 		}
 	}
 
