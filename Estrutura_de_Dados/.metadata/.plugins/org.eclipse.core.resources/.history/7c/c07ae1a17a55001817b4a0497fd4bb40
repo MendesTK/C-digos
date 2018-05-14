@@ -1,0 +1,7 @@
+package FilaDinamica;
+
+public class FilaDinamica {
+
+	private Elemento cabeca;
+	private Elemento cauda;
+}
