@@ -15,7 +15,11 @@ public class FilaDinamica {
 	
 	public void add(Object o){
 		System.out.println("Adicionando " + o + " a fila.");
-		cabeca = new Elemento(o, cauda);
+		if(cabeca ){
+			cabeca = new Elemento(o, cauda)
+		}else{
+			cauda = new Elemento(o, cauda);
+		}
 		
 	}
 	
