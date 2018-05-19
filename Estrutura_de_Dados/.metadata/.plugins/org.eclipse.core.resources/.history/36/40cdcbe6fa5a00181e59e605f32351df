@@ -1,0 +1,16 @@
+package Deques;
+
+public class DequeDinamico {
+	
+	private Elemento cabeca;
+	private Elemento cauda;
+	
+	public DequeDinamico() {
+		cabeca = cauda = null;
+	}
+	
+	
+	
+	
+
+}

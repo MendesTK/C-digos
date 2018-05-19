@@ -1,0 +1,12 @@
+package Deques;
+
+public class main {
+
+	public static void main(String[] args) {
+		DequeDinamico deque = new DequeDinamico();
+		
+		
+
+	}
+
+}
