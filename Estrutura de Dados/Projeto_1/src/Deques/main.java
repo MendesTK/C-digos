@@ -3,6 +3,7 @@ package Deques;
 public class main {
 
 	public static void main(String[] args) throws Exception {
+		
 		DequeDinamico deque = new DequeDinamico();
 		
 		deque.add(1);
