@@ -1,9 +1,0 @@
-package com.mcdonalds.DAO;
-
-import com.mcdonalds.modelo.*;
-
-public class MC_DonaldsDAO {
-
-	
-}
-	
