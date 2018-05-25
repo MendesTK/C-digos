@@ -15,6 +15,8 @@ public class main {
 		deque.addFirst(4);
 		
 		deque.list();
+		
+		deque.listEnd();
 
 	}
 
