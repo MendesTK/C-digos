@@ -8,8 +8,8 @@ public class main {
 		lista.add(1);
 		lista.add(2);
 		
-		lista.addFirst("a");
-		lista.addFirst("b");
+		//lista.addFirst("a");
+		//lista.addFirst("b");
 		
 		
 		
@@ -19,7 +19,13 @@ public class main {
 		
 		lista.listEnd();
 		
-
+		lista.removeLast();
+		
+		lista.list();
+		
+		lista.removeLast();
+		lista.removeLast();
+		
 	}
 
 }

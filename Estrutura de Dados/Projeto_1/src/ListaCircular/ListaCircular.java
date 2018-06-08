@@ -24,7 +24,7 @@ public class ListaCircular {
 		Elemento e = new Elemento(valor);
 		if (cauda != null) {
 			cauda.setProximo(e);
-			
+
 		}
 		e.setAnterior(cauda);
 		cauda = e;
@@ -50,6 +50,40 @@ public class ListaCircular {
 
 	}
 
+	public Object remove() throws Exception {
+		if (this.isEmpty()) {
+			throw new Exception("Deque vazio.");
+		}
+		Object o = cabeca.getValor();
+
+		if (cabeca == cauda) {
+			cabeca = cauda = null;
+			System.out.println("Removendo o " + o + " do inicio da lista.");
+		} else {
+			cabeca = cabeca.getProximo();
+			System.out.println("Removendo o " + o + " do inicio da lista.");
+		}
+
+		return o;
+	}
+
+	public Object removeLast() throws Exception {
+		if (this.isEmpty()) {
+			throw new Exception("Deque vazio.");
+		}
+		Object o = cauda.getValor();
+
+		if (cauda == cabeca) {
+			cauda = cabeca = null;
+			System.out.println("Removendo o " + o + " do final da lista.");
+		} else {
+			cauda = cauda.getAnterior();
+			System.out.println("Removendo o " + o + " do final da lista.");
+		}
+
+		return o;
+	}
+
 	public void list() {
 		Elemento e = cabeca;
 		System.out.println("Valor " + e.getValor());
@@ -59,7 +93,7 @@ public class ListaCircular {
 		}
 
 	}
-	
+
 	public void listEnd() {
 		Elemento e = cauda;
 		System.out.println("Valor " + e.getValor());

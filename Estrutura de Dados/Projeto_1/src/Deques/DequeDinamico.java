@@ -49,7 +49,7 @@ public class DequeDinamico {
 		if (this.isEmpty()) {
 			throw new Exception("Deque vazio.");
 		}
-		Object o = cabeca.getValor();
+		Object o = cauda.getValor();
 		cauda = cauda.getAnterior();
 		if (cauda == null) {
 			cabeca = null;
