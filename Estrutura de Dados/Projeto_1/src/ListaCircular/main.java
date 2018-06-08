@@ -8,7 +8,16 @@ public class main {
 		lista.add(1);
 		lista.add(2);
 		
+		lista.addFirst("a");
+		lista.addFirst("b");
+		
+		
+		
 		lista.list();
+		
+		System.out.println("----");
+		
+		lista.listEnd();
 		
 
 	}
