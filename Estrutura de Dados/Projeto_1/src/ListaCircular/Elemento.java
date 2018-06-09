@@ -1,33 +1,33 @@
 package ListaCircular;
 
 
-public class Elemento {
+public class Elemento<T> {
 
-	private Elemento proximo;
-	private Elemento anterior;
-	private Object valor;
+	private Elemento<T> proximo;
+	private Elemento<T> anterior;
+	private T valor;
 
-	public Elemento(Object v) {
+	public Elemento(T v) {
 		valor = v;
 	}
 
-	public Elemento getProximo() {
+	public Elemento<T> getProximo() {
 		return proximo;
 	}
 
-	public void setProximo(Elemento e) {
+	public void setProximo(Elemento<T> e) {
 		this.proximo = e;
 	}
 
-	public Elemento getAnterior() {
+	public Elemento<T> getAnterior() {
 		return anterior;
 	}
 
-	public void setAnterior(Elemento e) {
+	public void setAnterior(Elemento<T> e) {
 		this.anterior = e;
 	}
 
-	public Object getValor() {
+	public T getValor() {
 		return valor;
 	}
 	

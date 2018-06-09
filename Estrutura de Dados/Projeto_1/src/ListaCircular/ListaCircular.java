@@ -1,11 +1,9 @@
 package ListaCircular;
 
-import Deques.Elemento;
+public class ListaCircular<T> {
 
-public class ListaCircular {
-
-	private Elemento cabeca;
-	private Elemento cauda;
+	private Elemento<T> cabeca;
+	private Elemento<T> cauda;
 
 	public ListaCircular() {
 		cabeca = cauda = null;
@@ -19,9 +17,9 @@ public class ListaCircular {
 		return cabeca == null && cauda == null;
 	}
 
-	public void add(Object valor) throws Exception {
+	public void add(T valor) throws Exception {
 		System.out.println("Adicionando " + valor + " ao final da lista.");
-		Elemento e = new Elemento(valor);
+		Elemento<T> e = new Elemento<T>(valor);
 		if (cauda != null) {
 			cauda.setProximo(e);
 
@@ -35,9 +33,9 @@ public class ListaCircular {
 
 	}
 
-	public void addFirst(Object valor) throws Exception {
+	public void addFirst(T valor) throws Exception {
 		System.out.println("Adicionando " + valor + " ao inicio da lista.");
-		Elemento e = new Elemento(valor);
+		Elemento<T> e = new Elemento<T>(valor);
 		if (cabeca != null) {
 			cabeca.setAnterior(e);
 		}
@@ -50,11 +48,11 @@ public class ListaCircular {
 
 	}
 
-	public Object remove() throws Exception {
+	public T remove() throws Exception {
 		if (this.isEmpty()) {
 			throw new Exception("Deque vazio.");
 		}
-		Object o = cabeca.getValor();
+		T o = cabeca.getValor();
 
 		if (cabeca == cauda) {
 			cabeca = cauda = null;
@@ -62,16 +60,19 @@ public class ListaCircular {
 		} else {
 			cabeca = cabeca.getProximo();
 			System.out.println("Removendo o " + o + " do inicio da lista.");
+			cabeca.setAnterior(cauda);
+			cauda.setProximo(cabeca);
+
 		}
 
 		return o;
 	}
 
-	public Object removeLast() throws Exception {
+	public T removeLast() throws Exception {
 		if (this.isEmpty()) {
 			throw new Exception("Deque vazio.");
 		}
-		Object o = cauda.getValor();
+		T o = cauda.getValor();
 
 		if (cauda == cabeca) {
 			cauda = cabeca = null;
@@ -79,13 +80,15 @@ public class ListaCircular {
 		} else {
 			cauda = cauda.getAnterior();
 			System.out.println("Removendo o " + o + " do final da lista.");
+			cauda.setProximo(cabeca);
+			cabeca.setAnterior(cauda);
 		}
 
 		return o;
 	}
 
 	public void list() {
-		Elemento e = cabeca;
+		Elemento<T> e = cabeca;
 		System.out.println("Valor " + e.getValor());
 		while (e != cauda) {
 			e = e.getProximo();
@@ -95,7 +98,7 @@ public class ListaCircular {
 	}
 
 	public void listEnd() {
-		Elemento e = cauda;
+		Elemento<T> e = cauda;
 		System.out.println("Valor " + e.getValor());
 		while (e != cabeca) {
 			e = e.getAnterior();

@@ -3,13 +3,12 @@ package ListaCircular;
 public class main {
 
 	public static void main(String[] args) throws Exception {
-		ListaCircular lista = new ListaCircular();
+		ListaCircular<Integer> lista = new ListaCircular<Integer>();
 		
 		lista.add(1);
 		lista.add(2);
-		
-		//lista.addFirst("a");
-		//lista.addFirst("b");
+		lista.add(3);
+		lista.add(4);
 		
 		
 		
@@ -17,14 +16,17 @@ public class main {
 		
 		System.out.println("----");
 		
-		lista.listEnd();
+		//lista.listEnd();
 		
-		lista.removeLast();
+		lista.remove();
+		
+		System.out.println("----");
 		
 		lista.list();
 		
-		lista.removeLast();
-		lista.removeLast();
+		
+		
+	
 		
 	}
 
