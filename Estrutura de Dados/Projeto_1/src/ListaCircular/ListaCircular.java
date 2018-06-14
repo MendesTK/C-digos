@@ -50,7 +50,7 @@ public class ListaCircular<T> {
 
 	public T remove() throws Exception {
 		if (this.isEmpty()) {
-			throw new Exception("Deque vazio.");
+			throw new Exception("Lista vazia.");
 		}
 		T o = cabeca.getValor();
 
@@ -70,7 +70,7 @@ public class ListaCircular<T> {
 
 	public T removeLast() throws Exception {
 		if (this.isEmpty()) {
-			throw new Exception("Deque vazio.");
+			throw new Exception("Lista vazia.");
 		}
 		T o = cauda.getValor();
 
