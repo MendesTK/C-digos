@@ -1,5 +1,9 @@
 package ListaCircular;
 
+import java.util.List;
+import java.util.function.Function;
+
+
 public class ListaCircular<T> {
 
 	private Elemento<T> cabeca;
@@ -87,12 +91,12 @@ public class ListaCircular<T> {
 		return o;
 	}
 
-	public void list() {
+	public void operacao(Function<T,T> function) {
 		Elemento<T> e = cabeca;
-		System.out.println("Valor " + e.getValor());
+		
 		while (e != cauda) {
+			function.apply(e.getValor());
 			e = e.getProximo();
-			System.out.println("Valor " + e.getValor());
 		}
 
 	}

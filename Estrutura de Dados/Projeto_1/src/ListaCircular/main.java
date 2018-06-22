@@ -10,19 +10,7 @@ public class main {
 		lista.add(3);
 		lista.add(4);
 		
-		
-		
-		lista.list();
-		
-		System.out.println("----");
-		
-		//lista.listEnd();
-		
-		lista.remove();
-		
-		System.out.println("----");
-		
-		lista.list();
+		lista.operacao((n) -> {System.out.println(n); return n;});
 		
 		
 		
