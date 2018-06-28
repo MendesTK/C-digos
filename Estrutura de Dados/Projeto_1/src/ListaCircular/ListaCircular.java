@@ -98,16 +98,18 @@ public class ListaCircular<T> {
 			function.apply(e.getValor());
 			e = e.getProximo();
 		}
+		function.apply(e.getValor());
 
 	}
 
-	public void listEnd() {
+	public void operacaoEnd(Function<T,T> function) {
 		Elemento<T> e = cauda;
-		System.out.println("Valor " + e.getValor());
+		
 		while (e != cabeca) {
+			function.apply(e.getValor());
 			e = e.getAnterior();
-			System.out.println("Valor " + e.getValor());
 		}
+		function.apply(e.getValor());
 	}
 
 }
