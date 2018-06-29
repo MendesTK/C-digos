@@ -34,6 +34,7 @@ public class ListaCircular<T> {
 			cabeca = cauda;
 		}
 		e.setProximo(cabeca);
+		cabeca.setAnterior(cauda);
 
 	}
 
