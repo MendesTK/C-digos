@@ -7,12 +7,12 @@ public class main {
 		
 		
 		
-		//lista.add(1);
-		//lista.add(2);
-		//lista.add(3);
-		//lista.add(4);
+		lista.add(1);
+		lista.add(2);
+		lista.add(3);
+		lista.add(4);
 		
-		lista.operacaoEnd((n) -> {System.out.println(n); return n;});
+		lista.operacao((n) -> {System.out.println(n); return n;});
 		
 	
 

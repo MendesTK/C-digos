@@ -3,7 +3,6 @@ package ListaCircular;
 import java.util.List;
 import java.util.function.Function;
 
-
 public class ListaCircular<T> {
 
 	private Elemento<T> cabeca;
@@ -50,6 +49,7 @@ public class ListaCircular<T> {
 			cauda = cabeca;
 		}
 		e.setAnterior(cauda);
+		cauda.setProximo(cabeca);
 
 	}
 
@@ -92,25 +92,29 @@ public class ListaCircular<T> {
 		return o;
 	}
 
-	public void operacao(Function<T,T> function) {
+	public void operacao(Function<T, T> function) {
 		Elemento<T> e = cabeca;
-		
+
 		while (e != cauda) {
 			function.apply(e.getValor());
 			e = e.getProximo();
 		}
-		function.apply(e.getValor());
+		if (!isEmpty()) {
+			function.apply(e.getValor());
+		}
 
 	}
 
-	public void operacaoEnd(Function<T,T> function) {
+	public void operacaoEnd(Function<T, T> function) {
 		Elemento<T> e = cauda;
-		
+
 		while (e != cabeca) {
 			function.apply(e.getValor());
 			e = e.getAnterior();
 		}
-		function.apply(e.getValor());
+		if (!isEmpty()) {
+			function.apply(e.getValor());
+		}
 	}
 
 }
