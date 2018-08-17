@@ -120,5 +120,31 @@ public class OrdenadorDeVetores {
 		// return new int[] { min, max };
 		return cont3;
 	}
+	
+	public int[] selectionSort(int v[]){
+		int min = 0;
+		int operacoes = 0;
+		//int i = 0;
+		
+		for(int i = 0; i < v.length-1; i++){
+			min = i;
+			
+			for(int j = i + 1; j < v.length; j++){
+				operacoes +=1;
+				if(v[j] < v[min]){
+					min = j;
+				}
+			}
+			
+			if (v[i] != v[min]){
+				int aux = v[i];
+				v[i] = v[min];
+				v[min] = aux;
+			}
+			
+		}
+		
+		return v;
+	}
 
 }

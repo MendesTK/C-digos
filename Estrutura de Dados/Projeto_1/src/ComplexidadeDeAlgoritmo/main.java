@@ -4,7 +4,7 @@ public class main {
 
 	public static void main(String[] args) {
 		OrdenadorDeVetores vetor = new OrdenadorDeVetores();
-		int n = 1000;
+		/*int n = 1000;
 
 		for (int i = 1; i <= n; i++) {
 			int a[] = vetor.gerarAleatorio(i);
@@ -20,7 +20,14 @@ public class main {
 			System.out.println(i + ";" + n1 + ";" + n2 + ";" + n3 + ";" + n4 + ";" + n5);
 		}
 
-		// System.out.println(": " + vetorGerado[0]);
+		// System.out.println(": " + vetorGerado[0]);*/
+		
+		int v[] = {12, 8, 9, 3};
+		vetor.selectionSort(v);
+		
+		for(int i = 0; i < v.length; i++){
+			System.out.println(v[i]);
+		}
 
 	}
 
