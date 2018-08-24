@@ -12,7 +12,7 @@ public class OrdenadorDeVetores {
 		for (int i = 0; i < n; i++) {
 			v[i] = aux;
 			aux += 1;
-			//System.out.println(v[i]);
+			// System.out.println(v[i]);
 		}
 		return v;
 	}
@@ -23,7 +23,7 @@ public class OrdenadorDeVetores {
 		for (int i = 0; i < n; i++) {
 			v[i] = aux;
 			aux -= 1;
-			//System.out.println(v[i]);
+			// System.out.println(v[i]);
 		}
 		return v;
 	}
@@ -33,7 +33,7 @@ public class OrdenadorDeVetores {
 		for (int i = 0; i < n; i++) {
 			int random = (int) Math.floor(Math.random() * n + 1);
 			v[i] = random;
-			//System.out.println(v[i]);
+			// System.out.println(v[i]);
 		}
 		return v;
 
@@ -55,7 +55,7 @@ public class OrdenadorDeVetores {
 			}
 
 		}
-		//System.out.println("1: Min: " + min + " | Max: " + max);
+		// System.out.println("1: Min: " + min + " | Max: " + max);
 		// return new int[] { min, max };
 		return cont1;
 	}
@@ -76,7 +76,7 @@ public class OrdenadorDeVetores {
 				}
 			}
 		}
-		//System.out.println("2: Min: " + min + " | Max: " + max);
+		// System.out.println("2: Min: " + min + " | Max: " + max);
 		// return new int[] { min, max };
 		return cont2;
 	}
@@ -116,34 +116,48 @@ public class OrdenadorDeVetores {
 				min = v[v.length - 1];
 			}
 		}
-		//System.out.println("3: Min: " + min + " | Max: " + max);
+		// System.out.println("3: Min: " + min + " | Max: " + max);
 		// return new int[] { min, max };
 		return cont3;
 	}
-	
-	public int[] selectionSort(int v[]){
+
+	public int[] selectionSort(int v[]) {
 		int min = 0;
 		int operacoes = 0;
-		//int i = 0;
-		
-		for(int i = 0; i < v.length-1; i++){
+		// int i = 0;
+
+		for (int i = 0; i < v.length - 1; i++) {
 			min = i;
-			
-			for(int j = i + 1; j < v.length; j++){
-				operacoes +=1;
-				if(v[j] < v[min]){
+
+			for (int j = i + 1; j < v.length; j++) {
+				operacoes += 1;
+				if (v[j] < v[min]) {
 					min = j;
 				}
 			}
-			
-			if (v[i] != v[min]){
+
+			if (v[i] != v[min]) {
 				int aux = v[i];
 				v[i] = v[min];
 				v[min] = aux;
 			}
-			
+
 		}
-		
+
+		return v;
+	}
+
+	public int[] bubbleSort(int v[]) {
+		for (int i = 0; i < v.length - 1; i++) {
+			for (int j = i + 1; j < v.length; j++) {
+				if (v[i] > v[j]) {
+					int aux = v[i];
+					v[i] = v[j];
+					v[j] = aux;
+				}
+			}
+		}
+
 		return v;
 	}
 
