@@ -135,7 +135,7 @@ public class OrdenadorDeVetores {
 					min = j;
 				}
 			}
-
+			operacoes += 1;
 			if (v[i] != v[min]) {
 				int aux = v[i];
 				v[i] = v[min];
@@ -177,20 +177,16 @@ public class OrdenadorDeVetores {
 		} while (troca);
 		return v;
 	}
-	
-	public int[] insertionSort(int v[]){
-		for(int i = 1; i < v.length - 1; i++){
+
+	public int[] insertionSort(int v[]) {
+		for (int i = 1; i < v.length; i++) {
 			int pivo = v[i];
-			for(int j = i - 1; j < 0; j--){
-				if(pivo < v[j]){
-					v[j] = v[i];
-					
-					
-				}
-				
-				
+			int j = i - 1;
+			while (j >= 0 && pivo < v[j]) {
+				v[j + 1] = v[j];
+				j--;
 			}
-			v[i-1] = pivo;
+			v[j + 1] = pivo;
 		}
 
 		return v;
