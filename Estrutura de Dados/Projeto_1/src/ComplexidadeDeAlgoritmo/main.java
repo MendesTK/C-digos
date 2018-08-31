@@ -24,7 +24,7 @@ public class main {
 		
 		int v[] = {12, 8, 9, 3};
 		//vetor.selectionSort(v);
-		vetor.bubbleSort(v);
+		vetor.insertionSort(v);
 		
 		for(int i = 0; i < v.length; i++){
 			System.out.println(v[i]);

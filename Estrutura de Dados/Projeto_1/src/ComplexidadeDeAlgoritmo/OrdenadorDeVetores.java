@@ -161,4 +161,39 @@ public class OrdenadorDeVetores {
 		return v;
 	}
 
+	public int[] bubbleSort2(int v[]) {
+		boolean troca;
+
+		do {
+			troca = false;
+			for (int i = 0; i < v.length - 1; i++) {
+				if (v[i] > v[i + 1]) {
+					int aux = v[i];
+					v[i] = v[i + 1];
+					v[i + 1] = aux;
+					troca = true;
+				}
+			}
+		} while (troca);
+		return v;
+	}
+	
+	public int[] insertionSort(int v[]){
+		for(int i = 1; i < v.length - 1; i++){
+			int pivo = v[i];
+			for(int j = i - 1; j < 0; j--){
+				if(pivo < v[j]){
+					v[j] = v[i];
+					
+					
+				}
+				
+				
+			}
+			v[i-1] = pivo;
+		}
+
+		return v;
+	}
+
 }
