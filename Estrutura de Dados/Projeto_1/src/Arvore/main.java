@@ -26,7 +26,8 @@ public class main {
 		Arvore<Integer> a = new Arvore<Integer>();
 		a.raiz = n1;
 		
-		a.profundidadeR(n6);
+		//a.profundidadeR(n3);
+		a.profundidadeNR(n1);
 
 	}
 
